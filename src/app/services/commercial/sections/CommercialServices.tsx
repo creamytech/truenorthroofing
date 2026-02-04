@@ -63,9 +63,9 @@ export function CommercialServices() {
           {services.map((service) => (
             <StaggerItem key={service.title}>
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                <Card className="h-full bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-cyan-500/10 transition-all">
+                <Card className="h-full bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/20">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-amber-500/20">
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">

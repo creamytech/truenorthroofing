@@ -64,7 +64,7 @@ export function CTASection() {
     <section className="section-padding gradient-hero relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
       </div>
 
@@ -73,7 +73,7 @@ export function CTASection() {
           {/* Left Content */}
           <Reveal variants={slideInLeft}>
             <div className="text-white">
-              <span className="inline-block text-sm font-semibold tracking-wider uppercase text-cyan-400 mb-4">
+              <span className="inline-block text-sm font-semibold tracking-wider uppercase text-amber-400 mb-4">
                 Get Started
               </span>
               <h2 className="text-white mb-6">
@@ -87,7 +87,7 @@ export function CTASection() {
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {benefits.map((benefit) => (
                   <div key={benefit.text} className="flex items-center gap-3">
-                    <benefit.icon className="w-5 h-5 text-cyan-400" />
+                    <benefit.icon className="w-5 h-5 text-amber-400" />
                     <span className="text-white/80">{benefit.text}</span>
                   </div>
                 ))}
@@ -98,7 +98,7 @@ export function CTASection() {
                   href="tel:+18172044432"
                   className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <Phone className="w-5 h-5 text-amber-400" />
                   <div>
                     <p className="text-xs text-white/60">Call Us</p>
                     <p className="font-semibold text-white">(817) 204-4432</p>
@@ -108,7 +108,7 @@ export function CTASection() {
                   href="mailto:Office@truenorth-tx.co"
                   className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
                 >
-                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <Mail className="w-5 h-5 text-amber-400" />
                   <div>
                     <p className="text-xs text-white/60">Email Us</p>
                     <p className="font-semibold text-white">Office@truenorth-tx.co</p>
@@ -186,7 +186,7 @@ export function CTASection() {
                                   onClick={() => field.onChange(option)}
                                   className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-colors ${
                                     field.value === option
-                                      ? "bg-cyan-500 text-white"
+                                      ? "bg-amber-500 text-white"
                                       : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                                   }`}
                                 >

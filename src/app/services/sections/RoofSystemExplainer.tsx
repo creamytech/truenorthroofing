@@ -82,7 +82,7 @@ export function RoofSystemExplainer() {
                     >
                       <AccordionTrigger className="px-6 py-5 hover:bg-slate-700/50 transition-colors [&[data-state=open]]:bg-slate-700/50">
                         <div className="flex items-center gap-4 text-left">
-                          <span className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
+                          <span className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-500 to-blue-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
                             {index + 1}
                           </span>
                           <div>
@@ -100,9 +100,9 @@ export function RoofSystemExplainer() {
                           <p className="text-slate-300 leading-relaxed">
                             {component.description}
                           </p>
-                          <div className="p-4 rounded-lg bg-cyan-950/50 border border-cyan-900/50">
+                          <div className="p-4 rounded-lg bg-amber-950/50 border border-amber-900/50">
                             <p className="text-sm">
-                              <span className="font-semibold text-cyan-400">Why it matters: </span>
+                              <span className="font-semibold text-amber-400">Why it matters: </span>
                               <span className="text-slate-300">{component.importance}</span>
                             </p>
                           </div>

@@ -43,7 +43,7 @@ export function AboutTeaser() {
                   <div>
                     <blockquote className="text-2xl md:text-3xl font-semibold text-white leading-relaxed mb-4">
                       Most roofing companies are sales organizations that happen to install roofs.{" "}
-                      <span className="text-cyan-400">We're the opposite.</span>
+                      <span className="text-amber-400">We're the opposite.</span>
                     </blockquote>
                     <p className="text-lg text-slate-300">
                       We're roofing professionals who understand both the craft and the process—because 
@@ -63,10 +63,10 @@ export function AboutTeaser() {
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="h-full bg-slate-800 border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+                  <Card className="h-full bg-slate-800 border-slate-700 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4">
-                        <card.icon className="w-6 h-6 text-cyan-400" />
+                      <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">
+                        <card.icon className="w-6 h-6 text-amber-400" />
                       </div>
                       <h3 className="text-lg font-semibold text-white mb-2">
                         {card.title}

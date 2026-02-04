@@ -20,11 +20,11 @@ const services = [
   {
     title: "Residential Roofing",
     description: "Complete roof systems for homes including shingle, metal, and tile installations with manufacturer warranties.",
-    icon: <Home className="w-6 h-6 text-cyan-400" />,
+    icon: <Home className="w-6 h-6 text-amber-400" />,
     href: "/services/residential",
     className: "md:col-span-2",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-cyan-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
+      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600')] bg-cover bg-center opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
       </div>
@@ -76,16 +76,16 @@ const services = [
   {
     title: "Free Inspections",
     description: "Comprehensive roof inspections with detailed photo documentation and honest assessments.",
-    icon: <FileCheck className="w-6 h-6 text-cyan-400" />,
+    icon: <FileCheck className="w-6 h-6 text-amber-400" />,
     href: "/free-inspection",
     className: "md:col-span-1",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-cyan-500/20 via-slate-900 to-slate-800 items-center justify-center">
+      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-800 items-center justify-center">
         <motion.div
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <FileCheck className="w-16 h-16 text-cyan-400/30" />
+          <FileCheck className="w-16 h-16 text-amber-400/30" />
         </motion.div>
       </div>
     ),
@@ -116,7 +116,7 @@ export function ServicesBento() {
                 icon={service.icon}
                 className={cn(
                   service.className,
-                  "cursor-pointer hover:border-cyan-500/50 transition-colors bg-slate-800/50 border-slate-700"
+                  "cursor-pointer hover:border-amber-500/50 transition-colors bg-slate-800/50 border-slate-700"
                 )}
               />
             </Link>

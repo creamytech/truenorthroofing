@@ -114,7 +114,7 @@ export function Navbar() {
               href="tel:+18172044432"
               className="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 transition-colors z-10"
             >
-              <Phone className="w-5 h-5 text-cyan-400" />
+              <Phone className="w-5 h-5 text-amber-400" />
             </a>
             
             <Link 
@@ -172,7 +172,7 @@ export function Navbar() {
                           <Link
                             href={link.href}
                             onClick={() => setIsMobileOpen(false)}
-                            className="block py-2.5 text-xl font-semibold text-slate-200 hover:text-cyan-400 transition-colors"
+                            className="block py-2.5 text-xl font-semibold text-slate-200 hover:text-amber-400 transition-colors"
                           >
                             {link.label}
                           </Link>
@@ -183,7 +183,7 @@ export function Navbar() {
                                   key={child.href}
                                   href={child.href}
                                   onClick={() => setIsMobileOpen(false)}
-                                  className="block py-1.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                                  className="block py-1.5 text-sm text-slate-400 hover:text-amber-400 transition-colors"
                                 >
                                   {child.label}
                                 </Link>
@@ -217,7 +217,7 @@ export function Navbar() {
                   </motion.div>
 
                   {/* Bottom Decorative Element */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/0 via-cyan-500 to-cyan-500/0" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500/0 via-amber-500 to-amber-500/0" />
                 </div>
               </SheetContent>
             </Sheet>

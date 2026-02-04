@@ -17,9 +17,9 @@
   --tn-accent-light: 215 12% 75%; /* Light Silver */
   --tn-accent-dark: 215 10% 45%; /* Charcoal Gray */
 
-  /* CTA Color - Vibrant blue for calls to action */
-  --tn-cta: 200 95% 50%; /* Vibrant Cyan-Blue */
-  --tn-cta-light: 195 90% 60%; /* Light Cyan */
+  /* CTA Color - Warm amber/gold for calls to action (construction feel) */
+  --tn-cta: 38 92% 50%; /* Warm Amber */
+  --tn-cta-light: 43 96% 56%; /* Golden Yellow */
 
   /* Neutrals - Sophisticated Grays matching logo feel */
   --tn-slate-50: 210 40% 98%;

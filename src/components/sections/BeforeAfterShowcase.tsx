@@ -29,7 +29,7 @@ export function BeforeAfterShowcase() {
     <section className="section-padding bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -65,7 +65,7 @@ export function BeforeAfterShowcase() {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                <p className="text-sm text-cyan-400">{project.location}</p>
+                <p className="text-sm text-amber-400">{project.location}</p>
                 <p className="text-sm text-slate-400 mt-1">{project.description}</p>
               </div>
             </motion.div>

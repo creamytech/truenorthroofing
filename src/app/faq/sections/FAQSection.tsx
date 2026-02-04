@@ -152,7 +152,7 @@ export function FAQSection() {
           ))}
 
           {/* CTA after FAQ */}
-          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-500/30">
+          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-r from-blue-600/20 to-amber-600/20 border border-blue-500/30">
             <h3 className="text-2xl font-bold text-white mb-3">
               Still have questions?
             </h3>

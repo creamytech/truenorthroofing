@@ -70,7 +70,7 @@ export function Testimonials() {
     <section ref={containerRef} className="section-padding bg-slate-900 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       </div>
 
@@ -168,7 +168,7 @@ export function Testimonials() {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === currentIndex 
-                      ? "w-6 bg-cyan-500" 
+                      ? "w-6 bg-amber-500" 
                       : "bg-white/30 hover:bg-white/50"
                   }`}
                 />

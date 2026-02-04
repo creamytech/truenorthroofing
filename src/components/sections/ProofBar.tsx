@@ -21,10 +21,10 @@ export function ProofBar() {
             <StaggerItem key={item.label}>
               <motion.div
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-full bg-slate-800 border border-slate-600 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all cursor-default"
+                className="flex items-center gap-3 px-5 py-3 rounded-full bg-slate-800 border border-slate-600 shadow-sm hover:shadow-md hover:border-amber-500/50 transition-all cursor-default"
               >
-                <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                  <item.icon className="w-4 h-4 text-cyan-400" />
+                <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+                  <item.icon className="w-4 h-4 text-amber-400" />
                 </div>
                 <span className="text-sm font-medium text-slate-200 whitespace-nowrap">
                   {item.label}

@@ -88,24 +88,24 @@ export function ContactForm() {
               </h2>
               
               {contactInfo.map((item) => (
-                <Card key={item.label} className="bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-cyan-500/10 transition-shadow">
+                <Card key={item.label} className="bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-shadow">
                   <CardContent className="p-4">
                     {item.href ? (
                       <a href={item.href} className="flex items-center gap-4 group">
-                        <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500 transition-colors">
-                          <item.icon className="w-5 h-5 text-cyan-400 group-hover:text-white transition-colors" />
+                        <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500 transition-colors">
+                          <item.icon className="w-5 h-5 text-amber-400 group-hover:text-white transition-colors" />
                         </div>
                         <div>
                           <p className="text-sm text-slate-400">{item.label}</p>
-                          <p className="font-medium text-white group-hover:text-cyan-400 transition-colors">
+                          <p className="font-medium text-white group-hover:text-amber-400 transition-colors">
                             {item.value}
                           </p>
                         </div>
                       </a>
                     ) : (
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
-                          <item.icon className="w-5 h-5 text-cyan-400" />
+                        <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                          <item.icon className="w-5 h-5 text-amber-400" />
                         </div>
                         <div>
                           <p className="text-sm text-slate-400">{item.label}</p>

@@ -47,9 +47,9 @@ export function WhatToExpect() {
           {steps.map((step) => (
             <StaggerItem key={step.title}>
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                <Card className="h-full text-center bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-cyan-500/10 transition-all">
+                <Card className="h-full text-center bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
                   <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/20">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/20">
                       <step.icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="font-semibold text-white mb-2">

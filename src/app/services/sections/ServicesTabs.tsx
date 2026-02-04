@@ -137,7 +137,7 @@ export function ServicesTabs() {
                   >
                     {/* Service Header */}
                     <div className="text-center mb-10">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/20">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/20">
                         <service.icon className="w-8 h-8 text-white" />
                       </div>
                       <h2 className="text-white mb-3">{service.title}</h2>
@@ -151,8 +151,8 @@ export function ServicesTabs() {
                       <Card className="lg:row-span-2 bg-slate-800 border-slate-700">
                         <CardContent className="p-6">
                           <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                              <Check className="w-4 h-4 text-cyan-400" />
+                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                              <Check className="w-4 h-4 text-amber-400" />
                             </div>
                             What We Do
                           </h3>

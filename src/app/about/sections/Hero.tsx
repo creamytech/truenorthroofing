@@ -17,7 +17,7 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           <Reveal>
-            <span className="inline-block text-sm font-semibold tracking-wider uppercase text-cyan-400 mb-4">
+            <span className="inline-block text-sm font-semibold tracking-wider uppercase text-amber-400 mb-4">
               About True North
             </span>
           </Reveal>

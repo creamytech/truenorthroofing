@@ -45,9 +45,9 @@ export function TeamSection() {
         <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <StaggerItem key={index}>
-              <Card className="text-center bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-cyan-500/10 transition-all">
+              <Card className="text-center bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
                 <CardContent className="p-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold shadow-lg shadow-cyan-500/20">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold shadow-lg shadow-amber-500/20">
                     {member.initials}
                   </div>
                   <h3 className="font-semibold text-white mb-1">

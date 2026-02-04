@@ -16,7 +16,7 @@ export function ServicesHero() {
       <div className="container mx-auto px-4 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           <Reveal>
-            <span className="inline-block text-sm font-semibold tracking-wider uppercase text-cyan-400 mb-4">
+            <span className="inline-block text-sm font-semibold tracking-wider uppercase text-amber-400 mb-4">
               Our Services
             </span>
           </Reveal>
@@ -52,9 +52,9 @@ export function ServicesHero() {
               <a
                 key={link.href}
                 href={link.href}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800/80 border border-slate-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all text-slate-200 hover:text-white"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800/80 border border-slate-700 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all text-slate-200 hover:text-white"
               >
-                <link.icon className="w-5 h-5 text-cyan-400" />
+                <link.icon className="w-5 h-5 text-amber-400" />
                 <span className="font-medium">{link.label}</span>
               </a>
             ))}

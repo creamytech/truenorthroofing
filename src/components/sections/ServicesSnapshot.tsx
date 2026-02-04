@@ -93,7 +93,7 @@ export function ServicesSnapshot() {
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="data-[state=active]:bg-cyan-500 data-[state=active]:text-white data-[state=inactive]:text-slate-300 rounded-lg text-sm font-medium transition-all"
+                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-white data-[state=inactive]:text-slate-300 rounded-lg text-sm font-medium transition-all"
                 >
                   <service.icon className="w-4 h-4 mr-2" />
                   <span className="hidden sm:inline">{service.title.split(" ")[0]}</span>
@@ -134,8 +134,8 @@ export function ServicesSnapshot() {
                                   transition={{ delay: index * 0.05 }}
                                   className="flex items-center gap-3"
                                 >
-                                  <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                                    <Check className="w-3.5 h-3.5 text-cyan-400" />
+                                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                                    <Check className="w-3.5 h-3.5 text-amber-400" />
                                   </div>
                                   <span className="text-slate-200">{item}</span>
                                 </motion.li>
@@ -155,7 +155,7 @@ export function ServicesSnapshot() {
                                   transition={{ delay: 0.1 + index * 0.05 }}
                                   className="flex items-start gap-3"
                                 >
-                                  <span className="w-6 h-6 rounded-full bg-cyan-500 text-white text-xs font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <span className="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">
                                     {index + 1}
                                   </span>
                                   <span className="text-slate-300">{step}</span>

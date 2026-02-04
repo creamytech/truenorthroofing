@@ -24,7 +24,7 @@ export function SpotlightCTA() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               Ready to Protect Your{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-blue-500">
                 Texas Home?
               </span>
             </h2>
@@ -37,15 +37,15 @@ export function SpotlightCTA() {
             {/* Trust points */}
             <div className="flex flex-wrap justify-center gap-6 py-6">
               <div className="flex items-center gap-2 text-slate-300">
-                <Shield className="w-5 h-5 text-cyan-400" />
+                <Shield className="w-5 h-5 text-amber-400" />
                 <span className="text-sm">Fully Insured</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300">
-                <Clock className="w-5 h-5 text-cyan-400" />
+                <Clock className="w-5 h-5 text-amber-400" />
                 <span className="text-sm">Same-Day Available</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300">
-                <FileCheck className="w-5 h-5 text-cyan-400" />
+                <FileCheck className="w-5 h-5 text-amber-400" />
                 <span className="text-sm">Photo Documentation</span>
               </div>
             </div>
@@ -78,7 +78,7 @@ export function SpotlightCTA() {
       </div>
 
       {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
     </section>
   );
 }

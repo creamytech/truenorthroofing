@@ -15,7 +15,7 @@ export function WeatherWidget() {
         return <CloudLightning className="w-5 h-5 text-amber-400" />;
       case 'rain':
       case 'drizzle':
-        return <CloudRain className="w-5 h-5 text-cyan-400" />;
+        return <CloudRain className="w-5 h-5 text-amber-400" />;
       case 'snow':
         return <Snowflake className="w-5 h-5 text-blue-300" />;
       case 'clouds':

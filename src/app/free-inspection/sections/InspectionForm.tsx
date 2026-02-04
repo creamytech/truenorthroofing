@@ -83,7 +83,7 @@ export function InspectionForm() {
                 ))}
               </div>
 
-              <div className="mt-8 p-6 rounded-xl bg-cyan-950/50 border border-cyan-900/50">
+              <div className="mt-8 p-6 rounded-xl bg-amber-950/50 border border-amber-900/50">
                 <h3 className="font-semibold text-white mb-2">
                   Storm Damage?
                 </h3>
@@ -178,7 +178,7 @@ export function InspectionForm() {
                                   onClick={() => field.onChange(option)}
                                   className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors ${
                                     field.value === option
-                                      ? "bg-cyan-500 text-white"
+                                      ? "bg-amber-500 text-white"
                                       : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                                   }`}
                                 >

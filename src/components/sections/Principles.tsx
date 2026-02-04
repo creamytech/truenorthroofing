@@ -75,7 +75,7 @@ export function Principles() {
                     <Card 
                       className={`cursor-pointer transition-all duration-300 bg-slate-800 border-slate-700 ${
                         expandedIndex === index 
-                          ? "ring-2 ring-cyan-500/30 shadow-lg shadow-cyan-500/10" 
+                          ? "ring-2 ring-amber-500/30 shadow-lg shadow-amber-500/10" 
                           : "hover:shadow-md hover:border-slate-600"
                       }`}
                       onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -83,11 +83,11 @@ export function Principles() {
                       <CardContent className="p-0">
                         <div className="flex items-center gap-4 p-5">
                           <div className="flex items-center gap-4 flex-1">
-                            <span className="text-sm font-bold text-cyan-400">
+                            <span className="text-sm font-bold text-amber-400">
                               {principle.number}
                             </span>
-                            <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                              <principle.icon className="w-5 h-5 text-cyan-400" />
+                            <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                              <principle.icon className="w-5 h-5 text-amber-400" />
                             </div>
                             <div className="flex-1">
                               <h3 className="font-semibold text-white">

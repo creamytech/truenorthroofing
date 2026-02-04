@@ -29,7 +29,7 @@ export function SectionHeading({
     )}>
       {label && (
         <span className={cn(
-          "inline-block text-sm font-semibold tracking-wider uppercase text-cyan-400 mb-3",
+          "inline-block text-sm font-semibold tracking-wider uppercase text-amber-400 mb-3",
           labelClassName
         )}>
           {label}

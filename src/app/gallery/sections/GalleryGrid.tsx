@@ -133,7 +133,7 @@ export function GalleryGrid() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   activeFilter === filter.id
-                    ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/20"
+                    ? "bg-amber-500 text-white shadow-lg shadow-amber-500/20"
                     : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white"
                 }`}
               >
@@ -160,7 +160,7 @@ export function GalleryGrid() {
                 onClick={() => openModal(project)}
                 className="cursor-pointer group"
               >
-                <Card className="overflow-hidden border-slate-700 bg-slate-800 shadow-md hover:shadow-xl hover:shadow-cyan-500/10 transition-all">
+                <Card className="overflow-hidden border-slate-700 bg-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 transition-all">
                   <div className="relative aspect-[4/3]">
                     <Image
                       src={project.image}
@@ -240,7 +240,7 @@ export function GalleryGrid() {
                     <ul className="space-y-2">
                       {selectedProject.scope.map((item) => (
                         <li key={item} className="flex items-center gap-2 text-slate-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                           {item}
                         </li>
                       ))}
