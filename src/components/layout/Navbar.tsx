@@ -136,18 +136,18 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:w-[400px] p-0 bg-slate-900 border-slate-800">
                 <div className="flex flex-col h-full">
-                  {/* Mobile Menu Header */}
-                  <div className="p-6 border-b border-slate-800">
+                  {/* Mobile Menu Header - Centered */}
+                  <div className="p-6 border-b border-slate-800 text-center">
                     <Image
                       src="/logoheader.png"
                       alt="True North Roofing & Construction"
                       width={200}
                       height={60}
-                      className="h-12 w-auto brightness-0 invert"
+                      className="h-12 w-auto brightness-0 invert mx-auto"
                     />
                     {/* Weather in mobile menu */}
                     {weather && (
-                      <div className="mt-4 flex items-center gap-2 text-sm text-slate-400">
+                      <div className="mt-4 flex items-center justify-center gap-2 text-sm text-slate-400">
                         <WeatherIcon condition={weather.condition} />
                         <span>{weather.temp}°F in {weather.city}</span>
                       </div>
