@@ -1,0 +1,39 @@
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Reveal } from "@/lib/motion";
+import { ArrowRight, Phone } from "lucide-react";
+
+export function ResidentialCTA() {
+  return (
+    <section className="py-16 gradient-hero">
+      <div className="container mx-auto px-4 lg:px-8">
+        <Reveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-white mb-4">
+              Ready to Protect Your Home?
+            </h2>
+            <p className="text-xl text-slate-300 mb-8">
+              Schedule your free inspection today and get an honest assessment of your roof&apos;s condition.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="btn-shine gradient-accent text-white font-semibold h-14 px-8 text-base border-0">
+                <Link href="/free-inspection">
+                  Get Your Free Inspection
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="h-14 px-8 text-base border-white/30 text-white hover:bg-white/10">
+                <a href="tel:+18172044432">
+                  <Phone className="mr-2 w-5 h-5" />
+                  (817) 204-4432
+                </a>
+              </Button>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
