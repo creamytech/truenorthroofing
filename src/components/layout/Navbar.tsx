@@ -137,49 +137,49 @@ export function Navbar() {
               <SheetContent side="right" className="w-full sm:w-[400px] p-0 bg-slate-900 border-slate-800">
                 <div className="flex flex-col h-full">
                   {/* Mobile Menu Header - Centered */}
-                  <div className="p-6 border-b border-slate-800 text-center">
+                  <div className="p-4 border-b border-slate-800 text-center">
                     <Image
                       src="/logoheader.png"
                       alt="True North Roofing & Construction"
-                      width={200}
-                      height={60}
-                      className="h-12 w-auto brightness-0 invert mx-auto"
+                      width={180}
+                      height={50}
+                      className="h-10 w-auto brightness-0 invert mx-auto"
                     />
                     {/* Weather in mobile menu */}
                     {weather && (
-                      <div className="mt-4 flex items-center justify-center gap-2 text-sm text-slate-400">
+                      <div className="mt-2 flex items-center justify-center gap-2 text-xs text-slate-400">
                         <WeatherIcon condition={weather.condition} />
                         <span>{weather.temp}°F in {weather.city}</span>
                       </div>
                     )}
                   </div>
 
-                  {/* Mobile Navigation Links - Centered & Larger */}
-                  <div className="flex-1 py-8 px-6 overflow-y-auto flex flex-col justify-center">
-                    <div className="space-y-2">
+                  {/* Mobile Navigation Links - Centered & Compact */}
+                  <div className="flex-1 py-4 px-6 flex flex-col justify-center">
+                    <div className="space-y-1">
                       {navLinks.map((link, index) => (
                         <motion.div
                           key={link.href}
-                          initial={{ opacity: 0, y: 20 }}
+                          initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.05 }}
+                          transition={{ delay: index * 0.03 }}
                           className="text-center"
                         >
                           <Link
                             href={link.href}
                             onClick={() => setIsMobileOpen(false)}
-                            className="block py-4 text-2xl font-semibold text-slate-200 hover:text-cyan-400 transition-colors"
+                            className="block py-2.5 text-xl font-semibold text-slate-200 hover:text-cyan-400 transition-colors"
                           >
                             {link.label}
                           </Link>
                           {link.children && (
-                            <div className="mt-1 mb-2 space-y-1">
+                            <div className="space-y-0.5 mb-1">
                               {link.children.map((child) => (
                                 <Link
                                   key={child.href}
                                   href={child.href}
                                   onClick={() => setIsMobileOpen(false)}
-                                  className="block py-2 text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+                                  className="block py-1.5 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
                                 >
                                   {child.label}
                                 </Link>
@@ -191,21 +191,21 @@ export function Navbar() {
                     </div>
                   </div>
 
-                  {/* Mobile Menu Footer */}
+                  {/* Mobile Menu Footer - Compact */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="p-6 border-t border-slate-800 space-y-4"
+                    transition={{ delay: 0.2 }}
+                    className="p-4 border-t border-slate-800 space-y-3"
                   >
                     <a
                       href="tel:+18172044432"
-                      className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors"
+                      className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors text-sm"
                     >
-                      <Phone className="w-5 h-5" />
+                      <Phone className="w-4 h-4" />
                       <span className="font-medium">(817) 204-4432</span>
                     </a>
-                    <Button asChild className="w-full btn-shine gradient-accent text-white font-semibold h-12 border-0">
+                    <Button asChild className="w-full btn-shine gradient-accent text-white font-semibold h-10 border-0 text-sm">
                       <Link href="/free-inspection" onClick={() => setIsMobileOpen(false)}>
                         Free Inspection
                       </Link>

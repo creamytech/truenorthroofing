@@ -66,14 +66,14 @@ export function Footer() {
           <div className="container mx-auto px-4 lg:px-8 py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {/* Brand Column */}
-              <div className="lg:col-span-1">
+              <div className="lg:col-span-1 text-center md:text-left">
                 <Link href="/" className="inline-block mb-6">
                   <Image
                     src="/logoheader.png"
                     alt="True North Roofing & Construction"
                     width={240}
                     height={68}
-                    className="h-16 w-auto brightness-0 invert opacity-90"
+                    className="h-16 w-auto brightness-0 invert opacity-90 mx-auto md:mx-0"
                   />
                 </Link>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -81,7 +81,7 @@ export function Footer() {
                   Licensed, insured, and committed to excellence.
                 </p>
                 {/* Social Links */}
-                <div className="flex gap-3">
+                <div className="flex gap-3 justify-center md:justify-start">
                   <a
                     href="#"
                     className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
@@ -107,7 +107,7 @@ export function Footer() {
               </div>
 
               {/* Services Links */}
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="font-semibold text-white mb-6">Services</h3>
                 <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
@@ -124,7 +124,7 @@ export function Footer() {
               </div>
 
               {/* Company Links */}
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="font-semibold text-white mb-6">Company</h3>
                 <ul className="space-y-3">
                   {footerLinks.company.map((link) => (
@@ -141,33 +141,31 @@ export function Footer() {
               </div>
 
               {/* Contact Info */}
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="font-semibold text-white mb-6">Contact Us</h3>
                 <ul className="space-y-4">
                   <li>
                     <a
                       href="tel:+18172044432"
-                      className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
+                      className="inline-flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                     >
-                      <Phone className="w-5 h-5 mt-0.5 text-blue-500 group-hover:text-blue-400" />
+                      <Phone className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
                       <span className="text-sm">(817) 204-4432</span>
                     </a>
                   </li>
                   <li>
                     <a
                       href="mailto:Office@truenorth-tx.co"
-                      className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
+                      className="inline-flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                     >
-                      <Mail className="w-5 h-5 mt-0.5 text-blue-500 group-hover:text-blue-400" />
+                      <Mail className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
                       <span className="text-sm">Office@truenorth-tx.co</span>
                     </a>
                   </li>
                   <li>
-                    <div className="flex items-start gap-3 text-slate-400">
-                      <MapPin className="w-5 h-5 mt-0.5 text-blue-500" />
-                      <span className="text-sm">
-                        Serving the Greater<br />Texas Area
-                      </span>
+                    <div className="inline-flex items-center gap-3 text-slate-400">
+                      <MapPin className="w-5 h-5 text-blue-500" />
+                      <span className="text-sm">Serving the Greater Texas Area</span>
                     </div>
                   </li>
                 </ul>

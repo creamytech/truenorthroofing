@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Navbar, Footer } from "@/components/layout";
 import { WeatherProvider } from "@/lib/weather-context";
 import { RainEffect, StormBanner } from "@/components/weather";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -41,6 +42,86 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD Structured Data for Local Business
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "name": "True North Roofing & Construction",
+  "description": "Professional roofing experts of Texas specializing in storm restoration, residential and commercial roofing.",
+  "url": "https://truenorth-tx.co",
+  "telephone": "+1-817-204-4432",
+  "email": "Office@truenorth-tx.co",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dallas-Fort Worth",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.7767,
+    "longitude": -96.7970
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Texas"
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "19"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Residential Roofing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Roofing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Storm Damage Restoration"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Tarping"
+        }
+      }
+    ]
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,6 +129,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} dark`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased bg-slate-900 text-slate-100">
         <WeatherProvider>
           {/* Storm Alert Banner - Shows when severe weather is approaching */}
@@ -60,6 +147,9 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <Toaster position="bottom-right" richColors />
+          
+          {/* Scroll to Top Button */}
+          <ScrollToTop />
           
           {/* Mobile Sticky CTA */}
           <div className="lg:hidden sticky-cta">
