@@ -5,6 +5,7 @@ import { Navbar, Footer } from "@/components/layout";
 import { WeatherProvider } from "@/lib/weather-context";
 import { RainEffect, StormBanner } from "@/components/weather";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { ScrollToTopOnNavigate } from "@/components/ui/scroll-to-top-on-navigate";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -150,6 +151,9 @@ export default function RootLayout({
           
           {/* Scroll to Top Button */}
           <ScrollToTop />
+          
+          {/* Auto-scroll to top on page navigation */}
+          <ScrollToTopOnNavigate />
           
           {/* Mobile Sticky CTA */}
           <div className="lg:hidden sticky-cta">

@@ -117,7 +117,11 @@ export function Navbar() {
               <Phone className="w-5 h-5 text-cyan-400" />
             </a>
             
-            <Link href="/" className="absolute left-1/2 -translate-x-1/2">
+            <Link 
+              href="/" 
+              className="absolute left-1/2 -translate-x-1/2"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <Image
                 src="/logoheader.png"
                 alt="True North Roofing & Construction"
@@ -222,7 +226,11 @@ export function Navbar() {
           {/* Desktop Layout - Cleaner */}
           <div className="hidden lg:flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link 
+              href="/" 
+              className="flex items-center"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <Image
                 src="/logoheader.png"
                 alt="True North Roofing & Construction"
