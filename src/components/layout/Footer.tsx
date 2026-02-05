@@ -187,6 +187,21 @@ export function Footer() {
                   </Link>
                 </div>
               </div>
+              {/* Powered by Pixel Boba */}
+              <div className="mt-4 pt-4 border-t border-slate-800/50 text-center">
+                <a
+                  href="https://www.pixelboba.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors group"
+                >
+                  <span>Powered by</span>
+                  <span className="font-medium bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent group-hover:from-pink-300 group-hover:to-purple-300 transition-all">
+                    Pixel Boba
+                  </span>
+                  <span className="text-[10px] opacity-60">✦</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
