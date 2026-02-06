@@ -147,6 +147,8 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          {/* Spacer for mobile sticky CTA */}
+          <div className="h-24 lg:hidden" aria-hidden="true" />
           <Toaster position="bottom-right" richColors />
           
           {/* Scroll to Top Button */}
