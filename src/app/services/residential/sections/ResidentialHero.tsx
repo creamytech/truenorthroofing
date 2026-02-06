@@ -5,7 +5,7 @@ import { Reveal } from "@/lib/motion";
 import { Home, Shield, Clock, Award } from "lucide-react";
 
 const highlights = [
-  { icon: Shield, text: "5-Year Workmanship Warranty" },
+  { icon: Shield, text: "Lifetime Workmanship Warranty" },
   { icon: Clock, text: "Same-Day Estimates" },
   { icon: Award, text: "GAF Certified Installers" },
 ];

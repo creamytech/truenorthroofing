@@ -21,7 +21,7 @@ const services = {
     id: "residential",
     icon: Home,
     title: "Residential Roofing",
-    description: "Complete roofing solutions designed for Texas homeowners, built to last and backed by our workmanship guarantee.",
+    description: "Complete roofing solutions designed for Texas homeowners, built to last and backed by our lifetime workmanship warranty.",
     services: [
       "Complete Roof Replacement",
       "Roof Repair & Maintenance",
@@ -148,14 +148,16 @@ export function ServicesTabs() {
 
                     <div className="grid lg:grid-cols-3 gap-6">
                       {/* What We Do */}
-                      <Card className="lg:row-span-2 bg-slate-800 border-slate-700">
-                        <CardContent className="p-6">
-                          <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                              <Check className="w-4 h-4 text-amber-400" />
-                            </div>
-                            What We Do
-                          </h3>
+                      <Card className="lg:row-span-2 bg-slate-800 border-slate-700 h-full">
+                        <CardContent className="p-6 h-full">
+                          <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-b border-slate-700">
+                            <h3 className="font-semibold text-white flex items-center gap-2">
+                              <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                                <Check className="w-4 h-4 text-amber-400" />
+                              </div>
+                              What We Do
+                            </h3>
+                          </div>
                           <ul className="space-y-3">
                             {service.services.map((item) => (
                               <li key={item} className="flex items-start gap-3">
@@ -169,50 +171,57 @@ export function ServicesTabs() {
                         </CardContent>
                       </Card>
 
-                      {/* What We Inspect */}
-                      <Card className="bg-slate-800 border-slate-700">
-                        <CardContent className="p-6">
-                          <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                              <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                              </svg>
+                      {/* Right column wrapper for even spacing */}
+                      <div className="lg:col-span-2 lg:row-span-2 grid grid-rows-2 gap-6">
+                        {/* What We Inspect */}
+                        <Card className="bg-slate-800 border-slate-700 h-full">
+                          <CardContent className="p-6 h-full flex flex-col">
+                            <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-b border-slate-700">
+                              <h3 className="font-semibold text-white flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                                  <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                  </svg>
+                                </div>
+                                What We Inspect
+                              </h3>
                             </div>
-                            What We Inspect
-                          </h3>
-                          <ul className="space-y-2">
-                            {service.inspects.map((item) => (
-                              <li key={item} className="text-sm text-slate-400 flex items-start gap-2">
-                                <span className="text-amber-400 mt-1">•</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                      </Card>
+                            <ul className="space-y-2 flex-1">
+                              {service.inspects.map((item) => (
+                                <li key={item} className="text-sm text-slate-400 flex items-start gap-2">
+                                  <span className="text-amber-400 mt-1">•</span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
 
-                      {/* Red Flags We Catch */}
-                      <Card className="bg-red-950/50 border-red-900/50">
-                        <CardContent className="p-6">
-                          <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
-                              <AlertTriangle className="w-4 h-4 text-red-400" />
+                        {/* Red Flags We Catch */}
+                        <Card className="bg-red-950/50 border-red-900/50 h-full">
+                          <CardContent className="p-6 h-full flex flex-col">
+                            <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent border-b border-red-900/50">
+                              <h3 className="font-semibold text-white flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                                  <AlertTriangle className="w-4 h-4 text-red-400" />
+                                </div>
+                                Red Flags We Catch
+                              </h3>
                             </div>
-                            Red Flags We Catch
-                          </h3>
-                          <ul className="space-y-2">
-                            {service.redFlags.map((item) => (
-                              <li key={item} className="text-sm text-slate-400 flex items-start gap-2">
-                                <span className="text-red-400 mt-1">!</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                      </Card>
+                            <ul className="space-y-2 flex-1">
+                              {service.redFlags.map((item) => (
+                                <li key={item} className="text-sm text-slate-400 flex items-start gap-2">
+                                  <span className="text-red-400 mt-1">!</span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </div>
 
                       {/* CTA Card */}
-                      <Card className="lg:col-span-2 gradient-hero border-0">
+                      <Card className="lg:col-span-3 gradient-hero border-0">
                         <CardContent className="p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                           <div>
                             <h3 className="font-semibold text-lg text-white mb-1">

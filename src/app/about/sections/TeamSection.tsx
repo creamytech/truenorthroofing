@@ -1,30 +1,25 @@
 "use client";
 
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal, StaggerGrid, StaggerItem } from "@/lib/motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-// Placeholder team members - easy to populate later
 const team = [
   {
-    name: "Team Member",
-    role: "Owner / Lead Estimator",
-    initials: "TM",
+    name: "Carlos Chavez",
+    role: "Owner, CEO",
+    image: "/Carlos.jpeg",
   },
   {
-    name: "Team Member",
+    name: "Brent Jones",
+    role: "Co-Owner, Project Manager",
+    image: "/Brent.jpeg",
+  },
+  {
+    name: "Blake Hite",
     role: "Project Manager",
-    initials: "TM",
-  },
-  {
-    name: "Team Member",
-    role: "Lead Installer",
-    initials: "TM",
-  },
-  {
-    name: "Team Member",
-    role: "Customer Relations",
-    initials: "TM",
+    image: "/Blake.jpeg",
   },
 ];
 
@@ -42,18 +37,23 @@ export function TeamSection() {
           />
         </Reveal>
 
-        <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {team.map((member, index) => (
-            <StaggerItem key={index}>
-              <Card className="text-center bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
-                <CardContent className="p-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold shadow-lg shadow-amber-500/20">
-                    {member.initials}
+        <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {team.map((member) => (
+            <StaggerItem key={member.name} className="h-full">
+              <Card className="h-full text-center bg-slate-800 border-slate-700 hover:shadow-xl hover:shadow-amber-500/15 hover:border-amber-500/30 transition-all overflow-hidden group">
+                <CardContent className="p-8 py-10">
+                  <div className="relative w-40 h-40 rounded-full mx-auto mb-6 overflow-hidden ring-4 ring-amber-500/40 shadow-xl shadow-amber-500/20 group-hover:ring-amber-500/60 transition-all">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <h3 className="font-semibold text-white mb-1">
+                  <h3 className="font-bold text-xl text-white mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-slate-400">
+                  <p className="text-amber-400 font-medium">
                     {member.role}
                   </p>
                 </CardContent>
@@ -61,6 +61,26 @@ export function TeamSection() {
             </StaggerItem>
           ))}
         </StaggerGrid>
+
+        {/* Team Photo */}
+        <Reveal>
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl shadow-black/30">
+              <Image
+                src="/TeamPic.jpeg"
+                alt="True North Roofing Team"
+                width={1200}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                <p className="text-white font-semibold text-lg">The True North Team</p>
+                <p className="text-slate-300 text-sm">Ready to protect your home</p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

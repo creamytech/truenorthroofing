@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Shield, Clock, FileCheck } from "lucide-react";
+import { ArrowRight, Phone, Shield, Clock, FileCheck, Home } from "lucide-react";
 
 export function SpotlightCTA() {
   return (
@@ -39,6 +39,10 @@ export function SpotlightCTA() {
               <div className="flex items-center gap-2 text-slate-300">
                 <Shield className="w-5 h-5 text-amber-400" />
                 <span className="text-sm">Fully Insured</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <Home className="w-5 h-5 text-amber-400" />
+                <span className="text-sm">Locally Owned</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Clock className="w-5 h-5 text-amber-400" />

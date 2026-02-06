@@ -11,14 +11,33 @@ import Link from "next/link";
 
 // Texas service area locations with coordinates
 const serviceAreas = [
-  { id: "mansfield", name: "Mansfield", lat: 32.5631, lng: -97.1417, isPrimary: true },
-  { id: "arlington", name: "Arlington", lat: 32.7357, lng: -97.1081, isPrimary: false },
-  { id: "fort-worth", name: "Fort Worth", lat: 32.7555, lng: -97.3308, isPrimary: false },
-  { id: "dallas", name: "Dallas", lat: 32.7767, lng: -96.7970, isPrimary: false },
-  { id: "grand-prairie", name: "Grand Prairie", lat: 32.7459, lng: -96.9978, isPrimary: false },
-  { id: "burleson", name: "Burleson", lat: 32.5421, lng: -97.3208, isPrimary: false },
-  { id: "midlothian", name: "Midlothian", lat: 32.4824, lng: -96.9945, isPrimary: false },
-  { id: "cedar-hill", name: "Cedar Hill", lat: 32.5884, lng: -96.9561, isPrimary: false },
+  // Same-day service areas (HQ and primary service areas)
+  { id: "mansfield", name: "Mansfield", lat: 32.5631, lng: -97.1417, isPrimary: true, isSameDay: true },
+  { id: "arlington", name: "Arlington", lat: 32.7357, lng: -97.1081, isPrimary: false, isSameDay: true },
+  { id: "fort-worth", name: "Fort Worth", lat: 32.7555, lng: -97.3308, isPrimary: false, isSameDay: true },
+  { id: "dallas", name: "Dallas", lat: 32.7767, lng: -96.7970, isPrimary: false, isSameDay: true },
+  { id: "grand-prairie", name: "Grand Prairie", lat: 32.7459, lng: -96.9978, isPrimary: false, isSameDay: true },
+  { id: "burleson", name: "Burleson", lat: 32.5421, lng: -97.3208, isPrimary: false, isSameDay: true },
+  { id: "midlothian", name: "Midlothian", lat: 32.4824, lng: -96.9945, isPrimary: false, isSameDay: true },
+  { id: "cedar-hill", name: "Cedar Hill", lat: 32.5884, lng: -96.9561, isPrimary: false, isSameDay: true },
+  // Also serving (surrounding cities)
+  { id: "frisco", name: "Frisco", lat: 33.1507, lng: -96.8236, isPrimary: false, isSameDay: false },
+  { id: "plano", name: "Plano", lat: 33.0198, lng: -96.6989, isPrimary: false, isSameDay: false },
+  { id: "garland", name: "Garland", lat: 32.9126, lng: -96.6389, isPrimary: false, isSameDay: false },
+  { id: "denton", name: "Denton", lat: 33.2148, lng: -97.1331, isPrimary: false, isSameDay: false },
+  { id: "sherman", name: "Sherman", lat: 33.6357, lng: -96.6089, isPrimary: false, isSameDay: false },
+  { id: "anna", name: "Anna", lat: 33.3490, lng: -96.5486, isPrimary: false, isSameDay: false },
+  { id: "desoto", name: "DeSoto", lat: 32.5896, lng: -96.8570, isPrimary: false, isSameDay: false },
+  { id: "waxahachie", name: "Waxahachie", lat: 32.3865, lng: -96.8483, isPrimary: false, isSameDay: false },
+  { id: "north-richland-hills", name: "North Richland Hills", lat: 32.8343, lng: -97.2289, isPrimary: false, isSameDay: false },
+  { id: "saginaw", name: "Saginaw", lat: 32.8601, lng: -97.3639, isPrimary: false, isSameDay: false },
+  { id: "bedford", name: "Bedford", lat: 32.8440, lng: -97.1431, isPrimary: false, isSameDay: false },
+  { id: "colleyville", name: "Colleyville", lat: 32.8809, lng: -97.1550, isPrimary: false, isSameDay: false },
+  { id: "euless", name: "Euless", lat: 32.8370, lng: -97.0819, isPrimary: false, isSameDay: false },
+  { id: "irving", name: "Irving", lat: 32.8140, lng: -96.9489, isPrimary: false, isSameDay: false },
+  { id: "benbrook", name: "Benbrook", lat: 32.6732, lng: -97.4604, isPrimary: false, isSameDay: false },
+  { id: "cleburne", name: "Cleburne", lat: 32.3476, lng: -97.3867, isPrimary: false, isSameDay: false },
+  { id: "crowley", name: "Crowley", lat: 32.5793, lng: -97.3625, isPrimary: false, isSameDay: false },
 ];
 
 // DFW center coordinates
@@ -126,13 +145,13 @@ export function ServiceAreaMap() {
               </div>
             </div>
 
-            {/* Other Cities */}
+            {/* Same Day Service Cities */}
             <div className="space-y-2">
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-medium px-1">
-                Also Serving
+              <p className="text-xs text-green-400 uppercase tracking-wider font-medium px-1">
+                Same Day Service
               </p>
               <div className="grid grid-cols-2 gap-2">
-                {serviceAreas.filter(a => !a.isPrimary).map((area) => (
+                {serviceAreas.filter(a => a.isSameDay && !a.isPrimary).map((area) => (
                   <button
                     key={area.id}
                     onMouseEnter={() => setActiveArea(area.id)}
@@ -146,7 +165,7 @@ export function ServiceAreaMap() {
                   >
                     <div className="flex items-center gap-2">
                       <div className={`w-2 h-2 rounded-full transition-colors ${
-                        activeArea === area.id ? "bg-amber-400" : "bg-slate-500"
+                        activeArea === area.id ? "bg-amber-400" : "bg-green-400"
                       }`} />
                       <span className={`text-sm font-medium transition-colors ${
                         activeArea === area.id ? "text-white" : "text-slate-300"
@@ -154,6 +173,30 @@ export function ServiceAreaMap() {
                         {area.name}
                       </span>
                     </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Also Serving Cities */}
+            <div className="space-y-2">
+              <p className="text-xs text-slate-500 uppercase tracking-wider font-medium px-1">
+                Also Serving
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {serviceAreas.filter(a => !a.isSameDay).map((area) => (
+                  <button
+                    key={area.id}
+                    onMouseEnter={() => setActiveArea(area.id)}
+                    onMouseLeave={() => setActiveArea("mansfield")}
+                    onClick={() => setActiveArea(area.id)}
+                    className={`px-2 py-1 rounded text-xs font-medium transition-all duration-200 ${
+                      activeArea === area.id
+                        ? "bg-amber-500 text-white"
+                        : "bg-slate-800/50 text-slate-400 hover:bg-slate-700 hover:text-slate-300 border border-slate-700/50"
+                    }`}
+                  >
+                    {area.name}
                   </button>
                 ))}
               </div>

@@ -55,11 +55,27 @@ export function InspectionForm() {
   });
 
   const onSubmit = async (data: InspectionFormData) => {
-    console.log(data);
-    toast.success("Inspection requested!", {
-      description: "We'll contact you within 24 hours to confirm your appointment.",
-    });
-    form.reset();
+    try {
+      const response = await fetch('/api/inspection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit request');
+      }
+
+      toast.success("Inspection requested!", {
+        description: "We'll contact you within 24 hours to confirm your appointment.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Inspection form error:', error);
+      toast.error("Failed to submit request", {
+        description: "Please try again or call us directly at (817) 204-4432.",
+      });
+    }
   };
 
   return (

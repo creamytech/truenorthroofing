@@ -69,11 +69,27 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log(data);
-    toast.success("Message sent!", {
-      description: "We'll get back to you within 24 hours.",
-    });
-    form.reset();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      toast.success("Message sent!", {
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast.error("Failed to send message", {
+        description: "Please try again or call us directly at (817) 204-4432.",
+      });
+    }
   };
 
   return (

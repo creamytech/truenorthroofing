@@ -25,7 +25,7 @@ const services = [
     className: "md:col-span-2",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-[url('/Gallery/down-net_http20250816-195-3qpy65.jpg')] bg-cover bg-center opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
       </div>
     ),
@@ -38,13 +38,8 @@ const services = [
     className: "md:col-span-1",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
-        <motion.div
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute top-4 right-4"
-        >
-          <CloudLightning className="w-12 h-12 text-amber-400/50" />
-        </motion.div>
+        <div className="absolute inset-0 bg-[url('/Gallery/down-net_http20250906-159-six5.jpg')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
       </div>
     ),
   },
@@ -56,7 +51,7 @@ const services = [
     className: "md:col-span-1",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-blue-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/Gallery/down-net_http20250906-100-gvb2dx.jpg')] bg-cover bg-center opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
       </div>
     ),
@@ -68,8 +63,9 @@ const services = [
     href: "/services",
     className: "md:col-span-1",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-emerald-500/20 via-slate-900 to-slate-800 items-center justify-center">
-        <Wrench className="w-16 h-16 text-emerald-400/30" />
+      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-emerald-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/Gallery/down-net_http20250815-207-4fbre1.jpg')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
       </div>
     ),
   },
@@ -80,13 +76,9 @@ const services = [
     href: "/free-inspection",
     className: "md:col-span-1",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-800 items-center justify-center">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <FileCheck className="w-16 h-16 text-amber-400/30" />
-        </motion.div>
+      <div className="flex flex-1 w-full h-full min-h-[140px] rounded-xl bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/Gallery/down-net_http20250816-210-v40tcd.jpg')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
       </div>
     ),
   },

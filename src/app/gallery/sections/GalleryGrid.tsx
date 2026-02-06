@@ -11,145 +11,83 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Reveal } from "@/lib/motion";
-import { ChevronLeft, ChevronRight, MapPin, Calendar } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Filter categories
-const filters = [
-  { id: "all", label: "All Projects" },
-  { id: "replacement", label: "Replacement" },
-  { id: "repair", label: "Repair" },
-  { id: "storm", label: "Storm" },
-  { id: "commercial", label: "Commercial" },
-];
-
-// Expanded project gallery
+// Real project gallery from public/Gallery (44 images)
 const projects = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2832&auto=format&fit=crop",
-    location: "Dallas, TX",
-    type: "Full Replacement",
-    category: "replacement",
-    date: "January 2025",
-    scope: ["Complete tear-off", "New synthetic underlayment", "Architectural shingles", "Ridge vent installation"],
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2938&auto=format&fit=crop",
-    location: "Austin, TX",
-    type: "Storm Restoration",
-    category: "storm",
-    date: "December 2024",
-    scope: ["Hail damage repair", "Insurance documentation", "Full replacement", "Gutter repair"],
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop",
-    location: "Houston, TX",
-    type: "Residential",
-    category: "replacement",
-    date: "November 2024",
-    scope: ["Complete replacement", "Ventilation upgrade", "New flashing", "Skylight installation"],
-  },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2875&auto=format&fit=crop",
-    location: "San Antonio, TX",
-    type: "Full Replacement",
-    category: "replacement",
-    date: "October 2024",
-    scope: ["Deck repair", "Ice & water shield", "Designer shingles", "New gutters"],
-  },
-  {
-    id: 5,
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2853&auto=format&fit=crop",
-    location: "Fort Worth, TX",
-    type: "Commercial TPO",
-    category: "commercial",
-    date: "September 2024",
-    scope: ["TPO membrane", "Insulation upgrade", "HVAC curb work", "Parapet repair"],
-  },
-  {
-    id: 6,
-    image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=2940&auto=format&fit=crop",
-    location: "Plano, TX",
-    type: "Storm Restoration",
-    category: "storm",
-    date: "August 2024",
-    scope: ["Wind damage repair", "Emergency tarping", "Full restoration", "Supplemental claim"],
-  },
-  {
-    id: 7,
-    image: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2940&auto=format&fit=crop",
-    location: "Arlington, TX",
-    type: "Roof Repair",
-    category: "repair",
-    date: "July 2024",
-    scope: ["Leak repair", "Flashing replacement", "Valley repair", "Preventative maintenance"],
-  },
-  {
-    id: 8,
-    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=2884&auto=format&fit=crop",
-    location: "Irving, TX",
-    type: "Commercial Metal",
-    category: "commercial",
-    date: "June 2024",
-    scope: ["Standing seam metal", "Skylights", "Drainage system", "Energy coating"],
-  },
+  { id: 1, image: "/Gallery/down-net_http20250815-124-smvqip.jpg" },
+  { id: 2, image: "/Gallery/down-net_http20250815-136-h178us.jpg" },
+  { id: 3, image: "/Gallery/down-net_http20250815-207-4fbre1.jpg" },
+  { id: 4, image: "/Gallery/down-net_http20250815-261-fm7cim.jpg" },
+  { id: 5, image: "/Gallery/down-net_http20250815-74-lnjib6.jpg" },
+  { id: 6, image: "/Gallery/down-net_http20250815-80-ohukyp.jpg" },
+  { id: 7, image: "/Gallery/down-net_http20250816-153-wzbhqy.jpg" },
+  { id: 8, image: "/Gallery/down-net_http20250816-157-mty283.jpg" },
+  { id: 9, image: "/Gallery/down-net_http20250816-157-nxos4q.jpg" },
+  { id: 10, image: "/Gallery/down-net_http20250816-195-3qpy65.jpg" },
+  { id: 11, image: "/Gallery/down-net_http20250816-196-m7mkk9.jpg" },
+  { id: 12, image: "/Gallery/down-net_http20250816-201-86z84r.jpg" },
+  { id: 13, image: "/Gallery/down-net_http20250816-201-lw8p2i.jpg" },
+  { id: 14, image: "/Gallery/down-net_http20250816-201-tf318n.jpg" },
+  { id: 15, image: "/Gallery/down-net_http20250816-210-v40tcd.jpg" },
+  { id: 16, image: "/Gallery/down-net_http20250906-100-gvb2dx.jpg" },
+  { id: 17, image: "/Gallery/down-net_http20250906-121-pkrga2.jpg" },
+  { id: 18, image: "/Gallery/down-net_http20250906-158-ncs9ok.jpg" },
+  { id: 19, image: "/Gallery/down-net_http20250906-158-v9gpws.jpg" },
+  { id: 20, image: "/Gallery/down-net_http20250906-159-six5.jpg" },
+  { id: 21, image: "/Gallery/down-net_http20250906-171-wtm36x.jpg" },
+  { id: 22, image: "/Gallery/down-net_http20250906-189-osc5i3.jpg" },
+  { id: 23, image: "/Gallery/down-net_http20250906-82-ecugar.jpg" },
+  { id: 24, image: "/Gallery/down-net_http20250906-82-ubxwm0.jpg" },
+  { id: 25, image: "/Gallery/down-net_http20250925-204-zjxii5.jpg" },
+  { id: 26, image: "/Gallery/down-net_http20250925-98-fu9kf0.jpg" },
+  { id: 27, image: "/Gallery/down-net_http20251106-287-kkdazw.jpg" },
+  { id: 28, image: "/Gallery/down-net_http20251106-88-g95hf4.jpg" },
+  { id: 29, image: "/Gallery/down-net_http20251108-102-tmuvmn.jpg" },
+  { id: 30, image: "/Gallery/down-net_http20251108-10305-2k584z.jpg" },
+  { id: 31, image: "/Gallery/down-net_http20251108-13155-353p7o.jpg" },
+  { id: 32, image: "/Gallery/down-net_http20251108-237-hc0qnm.jpg" },
+  { id: 33, image: "/Gallery/down-net_http20251108-24794-2r7sq4.jpg" },
+  { id: 34, image: "/Gallery/down-net_http20251108-294-ihjydn.jpg" },
+  { id: 35, image: "/Gallery/down-net_http20251108-30962-ptp5zy.jpg" },
+  { id: 36, image: "/Gallery/down-net_http20251108-43072-9caafc.jpg" },
+  { id: 37, image: "/Gallery/down-net_http20251108-49227-g39eyk.jpg" },
+  { id: 38, image: "/Gallery/down-net_http20251108-49227-irz7mx.jpg" },
+  { id: 39, image: "/Gallery/down-net_http20251108-62384-7xs79m.jpg" },
+  { id: 40, image: "/Gallery/down-net_http20251108-62384-p92bds.jpg" },
+  { id: 41, image: "/Gallery/down-net_http20251108-93-9hc8r7.jpg" },
+  { id: 42, image: "/Gallery/down-net_http20251108-9833-8cr8yk.jpg" },
+  { id: 43, image: "/Gallery/down-net_http20251222-29262-5ronvi.jpg" },
+  { id: 44, image: "/Gallery/down-net_http20251222-32169-gwbxmh.jpg" },
 ];
 
 export function GalleryGrid() {
-  const [activeFilter, setActiveFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const filteredProjects = activeFilter === "all" 
-    ? projects 
-    : projects.filter(p => p.category === activeFilter);
-
   const openModal = (project: typeof projects[0]) => {
     setSelectedProject(project);
-    setCurrentIndex(filteredProjects.findIndex(p => p.id === project.id));
+    setCurrentIndex(projects.findIndex(p => p.id === project.id));
   };
 
   const navigate = (direction: "prev" | "next") => {
     const newIndex = direction === "prev"
-      ? (currentIndex - 1 + filteredProjects.length) % filteredProjects.length
-      : (currentIndex + 1) % filteredProjects.length;
+      ? (currentIndex - 1 + projects.length) % projects.length
+      : (currentIndex + 1) % projects.length;
     setCurrentIndex(newIndex);
-    setSelectedProject(filteredProjects[newIndex]);
+    setSelectedProject(projects[newIndex]);
   };
 
   return (
     <section className="section-padding bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Filter Bar */}
-        <Reveal>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
-                  activeFilter === filter.id
-                    ? "bg-amber-500 text-white shadow-lg shadow-amber-500/20"
-                    : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white"
-                }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
         {/* Gallery Grid */}
         <motion.div 
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.div
                 key={project.id}
                 layout
@@ -164,21 +102,11 @@ export function GalleryGrid() {
                   <div className="relative aspect-[4/3]">
                     <Image
                       src={project.image}
-                      alt={`${project.type} in ${project.location}`}
+                      alt="Roofing project"
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <div className="flex items-center gap-2 text-white/80 text-sm mb-1">
-                        <MapPin className="w-3.5 h-3.5" />
-                        {project.location}
-                      </div>
-                      <div className="text-white font-medium">
-                        {project.type}
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-colors duration-300" />
                   </div>
                 </Card>
               </motion.div>
@@ -188,18 +116,18 @@ export function GalleryGrid() {
 
         {/* Project Modal */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-4xl p-0 bg-slate-900 border-slate-700 overflow-hidden">
+          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] xl:max-w-[80vw] p-0 bg-slate-900 border-slate-700 overflow-hidden">
             <DialogHeader className="sr-only">
-              <DialogTitle>Project Details</DialogTitle>
+              <DialogTitle>Project Image</DialogTitle>
             </DialogHeader>
             
             {selectedProject && (
-              <div className="grid md:grid-cols-2">
-                {/* Image */}
-                <div className="relative aspect-square md:aspect-auto">
+              <div className="relative">
+                {/* Large Image */}
+                <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/9]">
                   <Image
                     src={selectedProject.image}
-                    alt={`${selectedProject.type} in ${selectedProject.location}`}
+                    alt="Roofing project"
                     fill
                     className="object-cover"
                   />
@@ -207,51 +135,27 @@ export function GalleryGrid() {
                   {/* Navigation */}
                   <button
                     onClick={() => navigate("prev")}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-800/90 hover:bg-slate-700 flex items-center justify-center shadow-md transition-colors text-white"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors text-white"
                   >
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
                     onClick={() => navigate("next")}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-800/90 hover:bg-slate-700 flex items-center justify-center shadow-md transition-colors text-white"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors text-white"
                   >
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-6 h-6" />
                   </button>
-                </div>
 
-                {/* Details */}
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-2 text-sm text-slate-400 mb-2">
-                    <Calendar className="w-4 h-4" />
-                    {selectedProject.date}
+                  {/* Bottom overlay with CTA */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent p-6">
+                    <div className="flex justify-center">
+                      <Button asChild size="lg" className="btn-shine gradient-accent text-white font-semibold border-0 shadow-lg">
+                        <a href="/free-inspection">
+                          Get Free Inspection
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  
-                  <h3 className="text-2xl font-bold text-white mb-1">
-                    {selectedProject.type}
-                  </h3>
-                  
-                  <div className="flex items-center gap-2 text-slate-400 mb-6">
-                    <MapPin className="w-4 h-4" />
-                    {selectedProject.location}
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-white mb-3">Project Scope</h4>
-                    <ul className="space-y-2">
-                      {selectedProject.scope.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-slate-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Button asChild className="w-full btn-shine gradient-accent text-white font-semibold border-0">
-                    <a href="/free-inspection">
-                      Get Your Free Inspection
-                    </a>
-                  </Button>
                 </div>
               </div>
             )}

@@ -55,8 +55,8 @@ export function ValuesGrid() {
 
         <StaggerGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {values.map((value) => (
-            <StaggerItem key={value.title}>
-              <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
+            <StaggerItem key={value.title} className="h-full">
+              <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="h-full">
                 <Card className="h-full bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">

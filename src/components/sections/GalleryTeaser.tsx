@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -13,47 +12,17 @@ import {
 } from "@/components/ui/dialog";
 import { Reveal, StaggerGrid, StaggerItem } from "@/lib/motion";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { ChevronLeft, ChevronRight, X, MapPin, Home } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-// Placeholder projects - would be replaced with actual images
+// Real projects from the gallery
 const projects = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2832&auto=format&fit=crop",
-    location: "Dallas, TX",
-    type: "Full Replacement",
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2938&auto=format&fit=crop",
-    location: "Austin, TX",
-    type: "Storm Restoration",
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop",
-    location: "Houston, TX",
-    type: "Residential",
-  },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2875&auto=format&fit=crop",
-    location: "San Antonio, TX",
-    type: "Full Replacement",
-  },
-  {
-    id: 5,
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2853&auto=format&fit=crop",
-    location: "Fort Worth, TX",
-    type: "Commercial",
-  },
-  {
-    id: 6,
-    image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=2940&auto=format&fit=crop",
-    location: "Plano, TX",
-    type: "Storm Restoration",
-  },
+  { id: 1, image: "/Gallery/down-net_http20250815-207-4fbre1.jpg" },
+  { id: 2, image: "/Gallery/down-net_http20250906-121-pkrga2.jpg" },
+  { id: 3, image: "/Gallery/down-net_http20251106-287-kkdazw.jpg" },
+  { id: 4, image: "/Gallery/down-net_http20251108-30962-ptp5zy.jpg" },
+  { id: 5, image: "/Gallery/down-net_http20250816-157-mty283.jpg" },
+  { id: 6, image: "/Gallery/down-net_http20251222-32169-gwbxmh.jpg" },
 ];
 
 export function GalleryTeaser() {
@@ -108,24 +77,12 @@ export function GalleryTeaser() {
                 <div className={`relative ${index === 0 ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
                   <Image
                     src={project.image}
-                    alt={`${project.type} in ${project.location}`}
+                    alt="Roofing project"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Info */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="flex items-center gap-2 text-white/80 text-sm mb-1">
-                      <MapPin className="w-3.5 h-3.5" />
-                      {project.location}
-                    </div>
-                    <div className="flex items-center gap-2 text-white font-medium">
-                      <Home className="w-3.5 h-3.5" />
-                      {project.type}
-                    </div>
-                  </div>
+                  {/* Subtle hover overlay */}
+                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-colors duration-300" />
                 </div>
               </motion.div>
             </StaggerItem>
@@ -134,15 +91,15 @@ export function GalleryTeaser() {
 
         {/* Lightbox Dialog */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-4xl p-0 bg-slate-900 border-slate-800">
+          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] xl:max-w-[80vw] p-0 bg-slate-900 border-slate-800">
             <DialogHeader className="sr-only">
               <DialogTitle>Project Image</DialogTitle>
             </DialogHeader>
-            <div className="relative aspect-video">
+            <div className="relative aspect-[4/3] md:aspect-[16/10]">
               {selectedProject && (
                 <Image
                   src={selectedProject.image}
-                  alt={`${selectedProject.type} in ${selectedProject.location}`}
+                  alt="Roofing project"
                   fill
                   className="object-cover"
                 />
@@ -151,32 +108,27 @@ export function GalleryTeaser() {
               {/* Navigation */}
               <button
                 onClick={() => navigateLightbox("prev")}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors"
               >
                 <ChevronLeft className="w-6 h-6 text-white" />
               </button>
               <button
                 onClick={() => navigateLightbox("next")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors"
               >
                 <ChevronRight className="w-6 h-6 text-white" />
               </button>
 
-              {/* Info */}
-              {selectedProject && (
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent">
-                  <div className="flex items-center gap-4 text-white">
-                    <span className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
-                      {selectedProject.location}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <Home className="w-4 h-4" />
-                      {selectedProject.type}
-                    </span>
-                  </div>
+              {/* Bottom CTA */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent p-6">
+                <div className="flex justify-center">
+                  <Button asChild size="lg" className="btn-shine gradient-accent text-white font-semibold border-0 shadow-lg">
+                    <a href="/free-inspection">
+                      Get Free Inspection
+                    </a>
+                  </Button>
                 </div>
-              )}
+              </div>
             </div>
           </DialogContent>
         </Dialog>

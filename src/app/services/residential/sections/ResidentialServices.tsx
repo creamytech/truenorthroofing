@@ -53,7 +53,7 @@ export function ResidentialServices() {
           <SectionHeading
             label="Our Services"
             title="Residential Roofing Solutions"
-            description="Comprehensive roofing services designed for Texas homeowners, backed by our workmanship guarantee."
+            description="Comprehensive roofing services designed for Texas homeowners, backed by our lifetime workmanship warranty."
             centered
             className="mb-12"
           />
