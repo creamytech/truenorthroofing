@@ -1,7 +1,12 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to prevent build failures
+const getResendClient = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+};
 
 interface ContactFormData {
   name: string;
@@ -155,6 +160,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
+      );
+    }
+
+    const resend = getResendClient();
+    if (!resend) {
+      console.error('Email not configured: RESEND_API_KEY is missing');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 503 }
       );
     }
 
