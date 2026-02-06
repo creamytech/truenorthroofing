@@ -33,12 +33,7 @@ function generateContactEmailHTML(data: ContactFormData): string {
           <!-- Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 32px; text-align: center;">
-              <h1 style="margin: 0; color: white; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-                TRUE NORTH
-              </h1>
-              <p style="margin: 8px 0 0; color: rgba(255,255,255,0.9); font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">
-                Roofing & Construction
-              </p>
+              <img src="https://truenorth-tx.co/logoheader.png" alt="True North Roofing & Construction" width="240" style="max-width: 240px; height: auto;" />
             </td>
           </tr>
           
@@ -151,6 +146,80 @@ function generateContactEmailHTML(data: ContactFormData): string {
   `;
 }
 
+function generateCustomerConfirmationHTML(data: ContactFormData): string {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #0f172a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 32px; text-align: center;">
+              <img src="https://truenorth-tx.co/logoheader.png" alt="True North Roofing & Construction" width="240" style="max-width: 240px; height: auto;" />
+            </td>
+          </tr>
+          
+          <!-- Content -->
+          <tr>
+            <td style="padding: 32px;">
+              <h2 style="margin: 0 0 16px; color: #22c55e; font-size: 24px; font-weight: 600; text-align: center;">
+                ✓ Message Received!
+              </h2>
+              <p style="margin: 0 0 24px; color: #f1f5f9; font-size: 16px; line-height: 1.6;">
+                Hi ${data.name.split(' ')[0]},
+              </p>
+              <p style="margin: 0 0 24px; color: #cbd5e1; font-size: 15px; line-height: 1.6;">
+                Thank you for reaching out to True North Roofing & Construction! We've received your message and a member of our team will get back to you within <strong style="color: #f59e0b;">24 hours</strong>.
+              </p>
+              
+              <!-- Message Summary -->
+              <div style="background-color: #0f172a; border-radius: 12px; padding: 20px; margin: 24px 0;">
+                <p style="margin: 0 0 8px; color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Your Message</p>
+                <p style="margin: 0 0 8px; color: #f59e0b; font-size: 14px; font-weight: 600;">${data.subject}</p>
+                <p style="margin: 0; color: #94a3b8; font-size: 14px; line-height: 1.5; white-space: pre-wrap;">${data.message}</p>
+              </div>
+              
+              <p style="margin: 0 0 24px; color: #cbd5e1; font-size: 15px; line-height: 1.6;">
+                Need immediate assistance? Give us a call:
+              </p>
+              
+              <div style="text-align: center;">
+                <a href="tel:+18172044432" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; font-size: 16px; font-weight: 600; padding: 14px 32px; border-radius: 8px; text-decoration: none;">
+                  📞 (817) 204-4432
+                </a>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #0f172a; padding: 24px 32px; text-align: center; border-top: 1px solid #334155;">
+              <p style="margin: 0; color: #64748b; font-size: 13px;">
+                True North Roofing & Construction, LLC
+              </p>
+              <p style="margin: 8px 0 0; color: #475569; font-size: 12px;">
+                Professional Roofing Experts of Texas
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body: ContactFormData = await request.json();
@@ -172,7 +241,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { error } = await resend.emails.send({
+    // Send notification to office
+    const { error: officeError } = await resend.emails.send({
       from: 'True North Roofing <noreply@truenorth-tx.co>',
       to: ['Office@truenorth-tx.co'],
       replyTo: body.email,
@@ -180,13 +250,21 @@ export async function POST(request: NextRequest) {
       html: generateContactEmailHTML(body),
     });
 
-    if (error) {
-      console.error('Resend error:', error);
+    if (officeError) {
+      console.error('Resend error (office):', officeError);
       return NextResponse.json(
         { error: 'Failed to send email' },
         { status: 500 }
       );
     }
+
+    // Send confirmation to customer
+    await resend.emails.send({
+      from: 'True North Roofing <noreply@truenorth-tx.co>',
+      to: [body.email],
+      subject: 'We received your message - True North Roofing',
+      html: generateCustomerConfirmationHTML(body),
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

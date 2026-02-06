@@ -31,7 +31,7 @@ const steps = [
   {
     icon: Hammer,
     title: "Professional Installation",
-    description: "Expert installation with clean jobsite practices and daily progress updates.",
+    description: "Complete tear-off down to the decking, thorough inspection for damage, and replacement of any compromised sections before expert installation with clean jobsite practices.",
   },
   {
     icon: CheckCircle,
