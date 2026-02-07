@@ -39,12 +39,13 @@ export function Hero() {
             className="flex justify-center"
           >
             <Image
-              src="/logoheader.png"
+              src="/herologo.png"
               alt="True North Roofing & Construction"
-              width={400}
-              height={114}
-              className="w-56 sm:w-60 lg:w-80 xl:w-96 h-auto drop-shadow-2xl"
+              width={1920}
+              height={548}
+              className="w-80 sm:w-96 lg:w-[32rem] xl:w-[40rem] h-auto drop-shadow-2xl"
               priority
+              unoptimized
             />
           </motion.div>
 
