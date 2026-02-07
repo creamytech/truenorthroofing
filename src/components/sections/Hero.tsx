@@ -10,7 +10,7 @@ import { GoogleReviewsBadge } from "@/components/ui/google-reviews-badge";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[80vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
@@ -28,8 +28,8 @@ export function Hero() {
       </div>
 
       {/* Centered Content */}
-      <div className="relative container mx-auto px-4 lg:px-8 py-20 lg:py-32 xl:py-40">
-        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center space-y-6 lg:space-y-8 xl:space-y-10">
+      <div className="relative container mx-auto px-4 lg:px-8 py-24 sm:py-20 lg:py-32 xl:py-40">
+        <div className="max-w-4xl xl:max-w-5xl mx-auto text-center space-y-8 lg:space-y-8 xl:space-y-10">
           
           {/* Logo */}
           <motion.div
@@ -43,7 +43,7 @@ export function Hero() {
               alt="True North Roofing & Construction"
               width={400}
               height={114}
-              className="w-48 sm:w-56 lg:w-80 xl:w-96 h-auto drop-shadow-2xl"
+              className="w-56 sm:w-60 lg:w-80 xl:w-96 h-auto drop-shadow-2xl"
               priority
             />
           </motion.div>
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight"
+            className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold uppercase tracking-wide leading-tight"
           >
             Professional Roofing{" "}
             <span className="text-gradient">Experts</span>
@@ -66,7 +66,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-sm sm:text-base lg:text-xl xl:text-2xl text-white/80 max-w-2xl xl:max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-2xl xl:max-w-3xl mx-auto leading-relaxed"
           >
             Storm restoration specialists delivering complete roofing systems with 
             documented inspections, insurance support, and unmatched craftsmanship.
@@ -80,13 +80,13 @@ export function Hero() {
             className="flex flex-wrap items-center justify-center gap-3 lg:gap-4 xl:gap-5"
           >
             <GoogleReviewsBadge rating={5.0} reviewCount={19} />
-            <div className="flex items-center gap-2 px-3 py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
+            <div className="flex items-center gap-2 px-3 py-2 sm:py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
               <Shield className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400" />
-              <span className="text-xs lg:text-sm xl:text-base text-white/90 font-medium">Fully Insured</span>
+              <span className="text-sm sm:text-xs lg:text-sm xl:text-base text-white/90 font-medium">Fully Insured</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
+            <div className="flex items-center gap-2 px-3 py-2 sm:py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
               <Clock className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400" />
-              <span className="text-xs lg:text-sm xl:text-base text-white/90 font-medium">Same-Day Service</span>
+              <span className="text-sm sm:text-xs lg:text-sm xl:text-base text-white/90 font-medium">Same-Day Service</span>
             </div>
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
               <Award className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400" />
@@ -101,15 +101,15 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex flex-wrap justify-center gap-3 lg:gap-4 xl:gap-5 pt-2"
           >
-            <Button asChild size="lg" className="btn-shine gradient-accent text-white font-semibold h-12 lg:h-14 xl:h-16 px-6 lg:px-8 xl:px-10 text-sm lg:text-base xl:text-lg shadow-lg hover:shadow-xl transition-shadow border-0">
+            <Button asChild size="lg" className="btn-shine gradient-accent text-white font-semibold h-13 sm:h-12 lg:h-14 xl:h-16 px-7 sm:px-6 lg:px-8 xl:px-10 text-base sm:text-sm lg:text-base xl:text-lg shadow-lg hover:shadow-xl transition-shadow border-0">
               <Link href="/free-inspection">
                 Get Free Inspection
-                <ArrowRight className="ml-2 w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+                <ArrowRight className="ml-2 w-5 h-5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-12 lg:h-14 xl:h-16 px-6 lg:px-8 xl:px-10 text-sm lg:text-base xl:text-lg bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm">
+            <Button asChild variant="outline" size="lg" className="h-13 sm:h-12 lg:h-14 xl:h-16 px-7 sm:px-6 lg:px-8 xl:px-10 text-base sm:text-sm lg:text-base xl:text-lg bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm">
               <a href="tel:+18172044432">
-                <Phone className="mr-2 w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+                <Phone className="mr-2 w-5 h-5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
                 (817) 204-4432
               </a>
             </Button>

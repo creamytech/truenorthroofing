@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Barlow_Condensed } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar, Footer } from "@/components/layout";
 import { WeatherProvider } from "@/lib/weather-context";
@@ -13,9 +13,10 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const outfit = Outfit({ 
+const barlowCondensed = Barlow_Condensed({ 
   subsets: ["latin"],
-  variable: "--font-outfit",
+  weight: ["600", "700", "800"],
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -129,7 +130,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} dark`}>
+    <html lang="en" className={`${inter.variable} ${barlowCondensed.variable} dark`}>
       <head>
         <script
           type="application/ld+json"

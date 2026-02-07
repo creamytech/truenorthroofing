@@ -138,9 +138,9 @@
   h4,
   h5,
   h6 {
-    font-family: "Outfit", "Inter", system-ui, sans-serif;
+    font-family: var(--font-heading), "Barlow Condensed", "Inter", system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: 0.01em;
     line-height: 1.1;
   }
 
@@ -313,12 +313,24 @@
   .text-gradient {
     background: linear-gradient(
       135deg,
-      hsl(var(--tn-primary)) 0%,
-      hsl(var(--tn-accent)) 100%
+      hsl(var(--tn-cta)) 0%,
+      hsl(var(--tn-cta-light)) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Amber accent divider for section breaks */
+  .accent-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--tn-cta)) 0%,
+      hsl(var(--tn-cta-light)) 100%
+    );
+    border-radius: 2px;
   }
 
   /* Section Spacing */
@@ -344,8 +356,8 @@
   height: 3px;
   background: linear-gradient(
     90deg,
-    hsl(var(--tn-accent)),
-    hsl(var(--tn-primary))
+    hsl(var(--tn-cta)),
+    hsl(var(--tn-cta-light))
   );
   transform-origin: left;
   z-index: 9999;

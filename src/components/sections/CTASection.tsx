@@ -73,10 +73,13 @@ export function CTASection() {
           {/* Left Content */}
           <Reveal variants={slideInLeft}>
             <div className="text-white">
-              <span className="inline-block text-sm font-semibold tracking-wider uppercase text-amber-400 mb-4">
-                Get Started
-              </span>
-              <h2 className="text-white mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="accent-divider" />
+                <span className="text-sm font-semibold tracking-wider uppercase text-amber-400">
+                  Get Started
+                </span>
+              </div>
+              <h2 className="text-white mb-6 uppercase tracking-wide">
                 Get In Touch with True North Today!
               </h2>
               <p className="text-xl text-white/70 mb-8 leading-relaxed">

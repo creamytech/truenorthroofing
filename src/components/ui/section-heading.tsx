@@ -28,22 +28,29 @@ export function SectionHeading({
       className
     )}>
       {label && (
-        <span className={cn(
-          "inline-block text-sm font-semibold tracking-wider uppercase text-amber-400 mb-3",
-          labelClassName
+        <div className={cn(
+          "flex items-center gap-3 mb-4",
+          centered && "justify-center"
         )}>
-          {label}
-        </span>
+          <div className="accent-divider" />
+          <span className={cn(
+            "text-sm font-semibold tracking-wider uppercase text-amber-400",
+            labelClassName
+          )}>
+            {label}
+          </span>
+          {centered && <div className="accent-divider" />}
+        </div>
       )}
       <h2 className={cn(
-        "text-white mb-4",
+        "text-white mb-4 uppercase tracking-wide",
         titleClassName
       )}>
         {title}
       </h2>
       {description && (
         <p className={cn(
-          "text-lg text-slate-400 leading-relaxed",
+          "text-lg text-slate-400 leading-relaxed normal-case tracking-normal",
           descriptionClassName
         )}>
           {description}

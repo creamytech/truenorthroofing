@@ -31,7 +31,7 @@ export function ResidentialHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-white mb-6"
+            className="text-white mb-6 uppercase tracking-wide"
           >
             Expert Roofing for{" "}
             <span className="text-gradient">Texas Homes</span>
