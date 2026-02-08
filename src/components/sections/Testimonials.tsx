@@ -67,10 +67,10 @@ export function Testimonials() {
   };
 
   return (
-    <section ref={containerRef} className="section-padding bg-slate-900 relative overflow-hidden">
+    <section ref={containerRef} className="section-padding bg-white dark:bg-slate-900 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       </div>
 
@@ -92,8 +92,8 @@ export function Testimonials() {
             description="Real reviews from Texas homeowners who trust True North with their roofing projects."
             centered
             className="mb-12"
-            titleClassName="text-white"
-            descriptionClassName="text-slate-400"
+            titleClassName="text-slate-900 dark:text-white"
+            descriptionClassName="text-slate-500 dark:text-slate-400"
           />
         </Reveal>
 
@@ -108,7 +108,7 @@ export function Testimonials() {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.4 }}
               >
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
+                <Card className="bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/10 backdrop-blur-sm">
                   <CardContent className="p-8 md:p-12">
                     <div className="flex items-start gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full gradient-accent flex items-center justify-center flex-shrink-0">
@@ -117,28 +117,28 @@ export function Testimonials() {
                       <div>
                         <div className="flex gap-1 mb-2">
                           {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                            <Star key={i} className="w-4 h-4 fill-amber-400 text-blue-400" />
                           ))}
                         </div>
-                        <span className="text-sm text-slate-400">
+                        <span className="text-sm text-slate-500 dark:text-slate-400">
                           {testimonials[currentIndex].type}
                         </span>
                       </div>
                     </div>
 
-                    <blockquote className="text-xl md:text-2xl text-white leading-relaxed mb-6">
+                    <blockquote className="text-xl md:text-2xl text-slate-800 dark:text-white leading-relaxed mb-6">
                       &ldquo;{testimonials[currentIndex].text}&rdquo;
                     </blockquote>
 
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-white font-bold">
+                      <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-700 dark:text-white font-bold">
                         {testimonials[currentIndex].name.split(" ").map(n => n[0]).join("")}
                       </div>
                       <div>
-                        <p className="font-semibold text-white">
+                        <p className="font-semibold text-slate-900 dark:text-white">
                           {testimonials[currentIndex].name}
                         </p>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-slate-500 dark:text-slate-400">
                           {testimonials[currentIndex].location}
                         </p>
                       </div>
@@ -155,7 +155,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={() => navigate("prev")}
-              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:text-white"
+              className="bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:bg-slate-200 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white"
             >
               <ChevronLeft className="w-5 h-5" />
             </Button>
@@ -168,8 +168,8 @@ export function Testimonials() {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === currentIndex 
-                      ? "w-6 bg-amber-500" 
-                      : "bg-white/30 hover:bg-white/50"
+                      ? "w-6 bg-blue-500" 
+                      : "bg-slate-200 dark:bg-white/30 hover:bg-slate-300 dark:hover:bg-white/50"
                   }`}
                 />
               ))}
@@ -179,7 +179,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={() => navigate("next")}
-              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:text-white"
+              className="bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:bg-slate-200 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white"
             >
               <ChevronRight className="w-5 h-5" />
             </Button>

@@ -57,7 +57,7 @@ const roofComponents = [
 
 export function RoofSystemExplainer() {
   return (
-    <section className="section-padding bg-slate-800/50">
+    <section className="section-padding bg-slate-50 dark:bg-slate-800/50">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -71,25 +71,25 @@ export function RoofSystemExplainer() {
 
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <Card className="bg-slate-800 border-slate-700">
+            <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
               <CardContent className="p-0">
                 <Accordion type="single" collapsible className="w-full">
                   {roofComponents.map((component, index) => (
                     <AccordionItem 
                       key={component.id} 
                       value={component.id}
-                      className="border-b border-slate-700 last:border-0"
+                      className="border-b border-slate-200 dark:border-slate-700 last:border-0"
                     >
-                      <AccordionTrigger className="px-6 py-5 hover:bg-slate-700/50 transition-colors [&[data-state=open]]:bg-slate-700/50">
+                      <AccordionTrigger className="px-6 py-5 hover:bg-slate-100/80 dark:hover:bg-slate-700/50 transition-colors [&[data-state=open]]:bg-slate-100/80 dark:[&[data-state=open]]:bg-slate-700/50">
                         <div className="flex items-center gap-4 text-left">
-                          <span className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-500 to-blue-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
+                          <span className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
                             {index + 1}
                           </span>
                           <div>
                             <h3 className="font-semibold text-white">
                               {component.title}
                             </h3>
-                            <p className="text-sm text-slate-400">
+                            <p className="text-sm text-slate-500 dark:text-slate-400">
                               {component.shortDesc}
                             </p>
                           </div>
@@ -97,13 +97,13 @@ export function RoofSystemExplainer() {
                       </AccordionTrigger>
                       <AccordionContent className="px-6 pb-6">
                         <div className="pl-12 space-y-4">
-                          <p className="text-slate-300 leading-relaxed">
+                          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                             {component.description}
                           </p>
-                          <div className="p-4 rounded-lg bg-amber-950/50 border border-amber-900/50">
+                          <div className="p-4 rounded-lg bg-blue-950/50 border border-blue-900/50">
                             <p className="text-sm">
-                              <span className="font-semibold text-amber-400">Why it matters: </span>
-                              <span className="text-slate-300">{component.importance}</span>
+                              <span className="font-semibold text-blue-400">Why it matters: </span>
+                              <span className="text-slate-600 dark:text-slate-300">{component.importance}</span>
                             </p>
                           </div>
                         </div>

@@ -184,10 +184,14 @@
   }
 
   .glass-dark {
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: none;
+  }
+
+  .dark .glass-dark {
+    background: rgba(15, 23, 42, 0.95);
   }
 
   /* Premium Shadow System */
@@ -243,6 +247,14 @@
       180deg,
       hsl(var(--tn-slate-50)) 0%,
       hsl(var(--tn-slate-100)) 100%
+    );
+  }
+
+  .dark .gradient-subtle {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--tn-slate-800)) 0%,
+      hsl(var(--tn-slate-900)) 100%
     );
   }
 
@@ -309,26 +321,26 @@
     left: 150%;
   }
 
-  /* Text Gradient */
+  /* Text Gradient - Brand Blue */
   .text-gradient {
     background: linear-gradient(
       135deg,
-      hsl(var(--tn-cta)) 0%,
-      hsl(var(--tn-cta-light)) 100%
+      hsl(var(--tn-primary-light)) 0%,
+      hsl(210 100% 72%) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Amber accent divider for section breaks */
+  /* Blue accent divider for section breaks */
   .accent-divider {
     width: 60px;
     height: 3px;
     background: linear-gradient(
       90deg,
-      hsl(var(--tn-cta)) 0%,
-      hsl(var(--tn-cta-light)) 100%
+      hsl(var(--tn-primary-light)) 0%,
+      hsl(210 100% 72%) 100%
     );
     border-radius: 2px;
   }
@@ -490,6 +502,10 @@ select:focus {
   background: hsl(var(--tn-slate-100));
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: hsl(var(--tn-slate-800));
+}
+
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--tn-slate-300));
   border-radius: 4px;
@@ -499,10 +515,22 @@ select:focus {
   background: hsl(var(--tn-slate-400));
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(var(--tn-slate-600));
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--tn-slate-500));
+}
+
 /* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--tn-slate-300)) hsl(var(--tn-slate-100));
+}
+
+.dark * {
+  scrollbar-color: hsl(var(--tn-slate-600)) hsl(var(--tn-slate-800));
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

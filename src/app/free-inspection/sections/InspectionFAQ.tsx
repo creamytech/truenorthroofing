@@ -43,7 +43,7 @@ const faqs = [
 
 export function InspectionFAQ() {
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -57,22 +57,22 @@ export function InspectionFAQ() {
 
         <div className="max-w-3xl mx-auto">
           <Reveal>
-            <Card className="bg-slate-800 border-slate-700">
+            <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
               <CardContent className="p-0">
                 <Accordion type="single" collapsible className="w-full">
                   {faqs.map((faq, index) => (
                     <AccordionItem
                       key={index}
                       value={`faq-${index}`}
-                      className="border-b border-slate-700 last:border-0"
+                      className="border-b border-slate-200 dark:border-slate-700 last:border-0"
                     >
-                      <AccordionTrigger className="px-6 py-5 text-left hover:bg-slate-700/50 transition-colors">
+                      <AccordionTrigger className="px-6 py-5 text-left hover:bg-slate-100/80 dark:hover:bg-slate-700/50 transition-colors">
                         <span className="font-medium text-white">
                           {faq.question}
                         </span>
                       </AccordionTrigger>
                       <AccordionContent className="px-6 pb-5">
-                        <p className="text-slate-300 leading-relaxed">
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </AccordionContent>

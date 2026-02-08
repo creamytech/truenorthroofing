@@ -35,8 +35,7 @@ export function Footer() {
           {/* Main roof shape - peaks in center like a roof */}
           <path
             d="M0,160 L0,120 L720,20 L1440,120 L1440,160 Z"
-            fill="#0f172a"
-            className="drop-shadow-[0_-4px_20px_rgba(0,0,0,0.3)]"
+            className="fill-slate-100 dark:fill-[#0f172a] drop-shadow-[0_-4px_20px_rgba(0,0,0,0.3)]"
           />
           {/* Subtle highlight line along roof edge */}
           <path
@@ -57,9 +56,9 @@ export function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="bg-slate-900 text-white relative overflow-hidden">
+      <div className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white relative overflow-hidden">
         {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100 via-slate-100 to-slate-200 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950" />
         
         <div className="relative">
           {/* Main Footer */}
@@ -73,10 +72,10 @@ export function Footer() {
                     alt="True North Roofing & Construction"
                     width={240}
                     height={68}
-                    className="h-16 w-auto brightness-0 invert opacity-90 mx-auto md:mx-0"
+                    className="h-16 w-auto brightness-0 dark:invert opacity-90 mx-auto md:mx-0"
                   />
                 </Link>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
                   Professional roofing experts of Texas. We build roofing systems, not just roofs. 
                   Licensed, insured, and committed to excellence.
                 </p>
@@ -86,7 +85,7 @@ export function Footer() {
                     href="https://www.facebook.com/profile.php?id=61575887673491&mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
+                    className="w-10 h-10 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"
                     aria-label="Facebook"
                   >
                     <Facebook className="w-5 h-5" />
@@ -95,7 +94,7 @@ export function Footer() {
                     href="https://www.instagram.com/truenorthconstr/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-pink-600 flex items-center justify-center transition-colors"
+                    className="w-10 h-10 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-pink-600 hover:text-white flex items-center justify-center transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram className="w-5 h-5" />
@@ -105,13 +104,13 @@ export function Footer() {
 
               {/* Services Links */}
               <div className="text-center md:text-left">
-                <h3 className="font-semibold text-white mb-6">Services</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-6">Services</h3>
                 <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors text-sm"
+                        className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors text-sm"
                       >
                         {link.label}
                       </Link>
@@ -122,13 +121,13 @@ export function Footer() {
 
               {/* Company Links */}
               <div className="text-center md:text-left">
-                <h3 className="font-semibold text-white mb-6">Company</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-6">Company</h3>
                 <ul className="space-y-3">
                   {footerLinks.company.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors text-sm"
+                        className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors text-sm"
                       >
                         {link.label}
                       </Link>
@@ -139,12 +138,12 @@ export function Footer() {
 
               {/* Contact Info */}
               <div className="text-center md:text-left">
-                <h3 className="font-semibold text-white mb-6">Contact Us</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-6">Contact Us</h3>
                 <ul className="space-y-4">
                   <li>
                     <a
                       href="tel:+18172044432"
-                      className="inline-flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                      className="inline-flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group"
                     >
                       <Phone className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
                       <span className="text-sm">(817) 204-4432</span>
@@ -153,14 +152,14 @@ export function Footer() {
                   <li>
                     <a
                       href="mailto:Office@truenorth-tx.co"
-                      className="inline-flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                      className="inline-flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group"
                     >
                       <Mail className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
                       <span className="text-sm">Office@truenorth-tx.co</span>
                     </a>
                   </li>
                   <li>
-                    <div className="inline-flex items-center gap-3 text-slate-400">
+                    <div className="inline-flex items-center gap-3 text-slate-500 dark:text-slate-400">
                       <MapPin className="w-5 h-5 text-blue-500" />
                       <span className="text-sm">Serving the Greater Texas Area</span>
                     </div>
@@ -171,26 +170,26 @@ export function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-slate-800">
+          <div className="border-t border-slate-200 dark:border-slate-800">
             <div className="container mx-auto px-4 lg:px-8 py-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
                 <p>© {currentYear} True North Roofing & Construction, LLC. All rights reserved.</p>
                 <div className="flex gap-6">
-                  <Link href="/privacy" className="hover:text-white transition-colors">
+                  <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
-                  <Link href="/terms" className="hover:text-white transition-colors">
+                  <Link href="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                     Terms of Service
                   </Link>
                 </div>
               </div>
               {/* Powered by Pixel Boba */}
-              <div className="mt-4 pt-4 border-t border-slate-800/50 text-center">
+              <div className="mt-4 pt-4 border-t border-slate-200/50 dark:border-slate-800/50 text-center">
                 <a
                   href="https://www.pixelboba.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors group"
+                  className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-600 dark:text-slate-300 transition-colors group"
                 >
                   <span>Powered by</span>
                   <span className="font-medium bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent group-hover:from-pink-300 group-hover:to-purple-300 transition-all">

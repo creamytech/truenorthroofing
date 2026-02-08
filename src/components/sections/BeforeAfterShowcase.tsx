@@ -16,10 +16,10 @@ const projects = [
 
 export function BeforeAfterShowcase() {
   return (
-    <section className="section-padding bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
+    <section className="section-padding bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -40,7 +40,7 @@ export function BeforeAfterShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+            <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-xl shadow-black/20">
               <Compare
                 firstImage={projects[0].before}
                 secondImage={projects[0].after}

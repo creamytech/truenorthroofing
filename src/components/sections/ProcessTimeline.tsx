@@ -50,7 +50,7 @@ export function ProcessTimeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="section-padding bg-slate-800/50">
+    <section className="section-padding bg-slate-50 dark:bg-slate-800/50">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -64,9 +64,9 @@ export function ProcessTimeline() {
 
         <div ref={containerRef} className="relative max-w-4xl mx-auto">
           {/* Animated Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-700">
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700">
             <motion.div
-              className="w-full bg-gradient-to-b from-amber-500 to-blue-500"
+              className="w-full bg-gradient-to-b from-blue-400 to-blue-600"
               style={{ height: lineHeight }}
             />
           </div>
@@ -84,8 +84,8 @@ export function ProcessTimeline() {
                 }`}
               >
                 {/* Icon Node */}
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-slate-800 border-4 border-amber-500 flex items-center justify-center shadow-lg shadow-amber-500/20 z-10">
-                  <step.icon className="w-7 h-7 text-amber-400" />
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white dark:bg-slate-800 border-4 border-blue-500 flex items-center justify-center shadow-lg shadow-blue-500/20 z-10">
+                  <step.icon className="w-7 h-7 text-blue-400" />
                 </div>
 
                 {/* Content Card */}
@@ -94,17 +94,17 @@ export function ProcessTimeline() {
                 }`}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg hover:shadow-amber-500/10 border border-slate-700 transition-all"
+                    className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg hover:shadow-blue-500/10 border border-slate-200 dark:border-slate-700 transition-all"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-sm font-bold text-amber-400">
+                      <span className="text-sm font-bold text-blue-400">
                         Step {index + 1}
                       </span>
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>

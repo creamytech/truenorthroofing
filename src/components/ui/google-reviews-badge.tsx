@@ -50,17 +50,17 @@ export function GoogleReviewsBadge({
                 key={i}
                 className={`w-4 h-4 ${
                   star.filled
-                    ? "fill-amber-400 text-amber-400"
+                    ? "fill-amber-400 text-blue-400"
                     : star.partial
-                    ? "fill-amber-400/50 text-amber-400"
-                    : "fill-slate-600 text-slate-600"
+                    ? "fill-amber-400/50 text-blue-400"
+                    : "fill-slate-300 dark:fill-slate-600 text-slate-300 dark:text-slate-600"
                 }`}
               />
             ))}
           </div>
-          <span className="text-sm font-semibold text-white">{rating}</span>
+          <span className="text-sm font-semibold text-slate-900 dark:text-white">{rating}</span>
         </div>
-        <span className="text-sm text-slate-400">({reviewCount} reviews)</span>
+        <span className="text-sm text-slate-500 dark:text-slate-400">({reviewCount} reviews)</span>
       </div>
     );
   }
@@ -70,7 +70,7 @@ export function GoogleReviewsBadge({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className={`inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 ${className}`}
+      className={`inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-slate-100 dark:bg-white/10 backdrop-blur-sm border border-slate-200 dark:border-white/20 ${className}`}
     >
       {/* Google Logo */}
       <svg className="w-6 h-6" viewBox="0 0 24 24">
@@ -101,17 +101,17 @@ export function GoogleReviewsBadge({
                 key={i}
                 className={`w-4 h-4 ${
                   star.filled
-                    ? "fill-amber-400 text-amber-400"
+                    ? "fill-amber-400 text-blue-400"
                     : star.partial
-                    ? "fill-amber-400/50 text-amber-400"
-                    : "fill-slate-600 text-slate-600"
+                    ? "fill-amber-400/50 text-blue-400"
+                    : "fill-slate-300 dark:fill-slate-600 text-slate-300 dark:text-slate-600"
                 }`}
               />
             ))}
           </div>
-          <span className="text-sm font-bold text-white">{rating}</span>
+          <span className="text-sm font-bold text-slate-900 dark:text-white">{rating}</span>
         </div>
-        <span className="text-xs text-slate-300">
+        <span className="text-xs text-slate-600 dark:text-slate-300">
           {reviewCount} Google Reviews
         </span>
       </div>
@@ -134,8 +134,8 @@ export function StarRating({ rating = 5, size = "md" }: { rating?: number; size?
           key={i}
           className={`${sizeClasses[size]} ${
             i < rating
-              ? "fill-amber-400 text-amber-400"
-              : "fill-slate-600 text-slate-600"
+              ? "fill-amber-400 text-blue-400"
+              : "fill-slate-300 dark:fill-slate-600 text-slate-300 dark:text-slate-600"
           }`}
         />
       ))}

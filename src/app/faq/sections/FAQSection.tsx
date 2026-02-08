@@ -126,7 +126,7 @@ export function FAQSection() {
         <div className="max-w-4xl mx-auto">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-12 last:mb-0">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
                 <span className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-lg">
                   {categoryIndex + 1}
                 </span>
@@ -137,12 +137,12 @@ export function FAQSection() {
                   <AccordionItem
                     key={faqIndex}
                     value={`${categoryIndex}-${faqIndex}`}
-                    className="border border-slate-700 rounded-xl px-6 bg-slate-800/50 data-[state=open]:bg-slate-800"
+                    className="border border-slate-200 dark:border-slate-700 rounded-xl px-6 bg-white dark:bg-slate-800 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800"
                   >
-                    <AccordionTrigger className="text-left text-white hover:text-blue-400 py-5">
+                    <AccordionTrigger className="text-left text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 py-5">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-slate-400 pb-5 leading-relaxed">
+                    <AccordionContent className="text-slate-500 dark:text-slate-400 pb-5 leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -152,11 +152,11 @@ export function FAQSection() {
           ))}
 
           {/* CTA after FAQ */}
-          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-r from-blue-600/20 to-amber-600/20 border border-blue-500/30">
-            <h3 className="text-2xl font-bold text-white mb-3">
+          <div className="mt-16 text-center p-8 rounded-2xl bg-gradient-to-r from-blue-600/20 to-blue-500/10 border border-blue-500/30">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
               Still have questions?
             </h3>
-            <p className="text-slate-400 mb-6">
+            <p className="text-slate-500 dark:text-slate-400 mb-6">
               Our team is here to help. Contact us for personalized answers.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

@@ -14,7 +14,7 @@ export function CTABanner() {
             <h2 className="text-white mb-4">
               Ready to Work with True North?
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
+            <p className="text-xl text-white/70 mb-8">
               Schedule your free inspection today and experience the True North difference.
             </p>
             <Button asChild size="lg" className="btn-shine gradient-accent text-white font-semibold h-14 px-8 text-base border-0">

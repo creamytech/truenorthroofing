@@ -107,17 +107,17 @@ export function ServicesTabs() {
   const [activeTab, setActiveTab] = useState("residential");
 
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 h-16 p-1.5 bg-slate-800 rounded-2xl mb-10">
+            <TabsList className="grid w-full grid-cols-3 h-16 p-1.5 bg-slate-100 dark:bg-slate-800 rounded-2xl mb-10">
               {Object.entries(services).map(([key, service]) => (
                 <TabsTrigger
                   key={key}
                   value={key}
                   id={service.id}
-                  className="data-[state=active]:bg-slate-700 data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl text-base font-medium transition-all h-full text-slate-400"
+                  className="data-[state=active]:bg-slate-200 dark:data-[state=active]:bg-slate-700 data-[state=active]:text-slate-900 dark:data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl text-base font-medium transition-all h-full text-slate-500 dark:text-slate-400"
                 >
                   <service.icon className="w-5 h-5 mr-2" />
                   <span className="hidden sm:inline">{service.title.split(" ")[0]}</span>
@@ -137,23 +137,23 @@ export function ServicesTabs() {
                   >
                     {/* Service Header */}
                     <div className="text-center mb-10">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/20">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/20">
                         <service.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h2 className="text-white mb-3">{service.title}</h2>
-                      <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+                      <h2 className="text-slate-900 dark:text-white mb-3">{service.title}</h2>
+                      <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
                         {service.description}
                       </p>
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-6">
                       {/* What We Do */}
-                      <Card className="lg:row-span-2 bg-slate-800 border-slate-700 h-full">
+                      <Card className="lg:row-span-2 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 h-full">
                         <CardContent className="p-6 h-full">
-                          <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-b border-slate-700">
-                            <h3 className="font-semibold text-white flex items-center gap-2">
-                              <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                                <Check className="w-4 h-4 text-amber-400" />
+                          <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-blue-500/10 via-blue-500/5 to-transparent border-b border-slate-200 dark:border-slate-700">
+                            <h3 className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                              <div className="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center">
+                                <Check className="w-4 h-4 text-blue-400" />
                               </div>
                               What We Do
                             </h3>
@@ -164,7 +164,7 @@ export function ServicesTabs() {
                                 <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                   <Check className="w-3 h-3 text-green-400" />
                                 </div>
-                                <span className="text-slate-300">{item}</span>
+                                <span className="text-white/70">{item}</span>
                               </li>
                             ))}
                           </ul>
@@ -174,12 +174,12 @@ export function ServicesTabs() {
                       {/* Right column wrapper for even spacing */}
                       <div className="lg:col-span-2 lg:row-span-2 grid grid-rows-2 gap-6">
                         {/* What We Inspect */}
-                        <Card className="bg-slate-800 border-slate-700 h-full">
+                        <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 h-full">
                           <CardContent className="p-6 h-full flex flex-col">
-                            <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-b border-slate-700">
-                              <h3 className="font-semibold text-white flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                                  <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-blue-500/10 via-blue-500/5 to-transparent border-b border-slate-200 dark:border-slate-700">
+                              <h3 className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center">
+                                  <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                   </svg>
                                 </div>
@@ -188,8 +188,8 @@ export function ServicesTabs() {
                             </div>
                             <ul className="space-y-2 flex-1">
                               {service.inspects.map((item) => (
-                                <li key={item} className="text-sm text-slate-400 flex items-start gap-2">
-                                  <span className="text-amber-400 mt-1">•</span>
+                                <li key={item} className="text-sm text-slate-500 dark:text-slate-400 flex items-start gap-2">
+                                  <span className="text-blue-400 mt-1">•</span>
                                   {item}
                                 </li>
                               ))}
@@ -198,10 +198,10 @@ export function ServicesTabs() {
                         </Card>
 
                         {/* Red Flags We Catch */}
-                        <Card className="bg-red-950/50 border-red-900/50 h-full">
+                        <Card className="bg-red-50 dark:bg-red-950/50 border-red-200 dark:border-red-900/50 h-full">
                           <CardContent className="p-6 h-full flex flex-col">
-                            <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent border-b border-red-900/50">
-                              <h3 className="font-semibold text-white flex items-center gap-2">
+                            <div className="-mx-6 -mt-6 px-6 py-4 mb-4 bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent border-b border-red-200 dark:border-red-900/50">
+                              <h3 className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
                                   <AlertTriangle className="w-4 h-4 text-red-400" />
                                 </div>
@@ -210,7 +210,7 @@ export function ServicesTabs() {
                             </div>
                             <ul className="space-y-2 flex-1">
                               {service.redFlags.map((item) => (
-                                <li key={item} className="text-sm text-slate-400 flex items-start gap-2">
+                                <li key={item} className="text-sm text-slate-500 dark:text-slate-400 flex items-start gap-2">
                                   <span className="text-red-400 mt-1">!</span>
                                   {item}
                                 </li>
@@ -227,7 +227,7 @@ export function ServicesTabs() {
                             <h3 className="font-semibold text-lg text-white mb-1">
                               Need {service.title.split(" ")[0]} Services?
                             </h3>
-                            <p className="text-slate-300 text-sm">
+                            <p className="text-white/70 text-sm">
                               Schedule your free inspection today.
                             </p>
                           </div>

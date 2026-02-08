@@ -34,7 +34,7 @@ export function SectionHeading({
         )}>
           <div className="accent-divider" />
           <span className={cn(
-            "text-sm font-semibold tracking-wider uppercase text-amber-400",
+            "text-sm font-semibold tracking-wider uppercase text-blue-400",
             labelClassName
           )}>
             {label}
@@ -43,14 +43,14 @@ export function SectionHeading({
         </div>
       )}
       <h2 className={cn(
-        "text-white mb-4 uppercase tracking-wide",
+        "text-slate-900 dark:text-white mb-4 uppercase tracking-wide",
         titleClassName
       )}>
         {title}
       </h2>
       {description && (
         <p className={cn(
-          "text-lg text-slate-400 leading-relaxed normal-case tracking-normal",
+          "text-lg text-slate-500 dark:text-slate-400 leading-relaxed normal-case tracking-normal",
           descriptionClassName
         )}>
           {description}

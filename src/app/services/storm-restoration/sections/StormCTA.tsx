@@ -14,7 +14,7 @@ export function StormCTA() {
             <h2 className="text-white mb-4">
               Storm Damage? We Can Help.
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
+            <p className="text-xl text-white/70 mb-8">
               Don&apos;t wait for small damage to become a big problem. Get your free storm damage inspection today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

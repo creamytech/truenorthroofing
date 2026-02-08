@@ -18,7 +18,7 @@ export function ServicesHero() {
           <Reveal>
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="accent-divider" />
-              <span className="text-sm font-semibold tracking-wider uppercase text-amber-400">
+              <span className="text-sm font-semibold tracking-wider uppercase text-blue-400">
                 Our Services
               </span>
               <div className="accent-divider" />
@@ -39,7 +39,7 @@ export function ServicesHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-slate-300 leading-relaxed mb-10"
+            className="text-xl text-white/70 leading-relaxed mb-10"
           >
             From emergency repairs to complete replacements, we handle every roofing 
             need with expertise, precision, and unmatched customer service.
@@ -56,9 +56,9 @@ export function ServicesHero() {
               <a
                 key={link.href}
                 href={link.href}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800/80 border border-slate-700 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all text-slate-200 hover:text-white"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 hover:shadow-lg hover:shadow-blue-500/10 transition-all text-white"
               >
-                <link.icon className="w-5 h-5 text-amber-400" />
+                <link.icon className="w-5 h-5 text-blue-400" />
                 <span className="font-medium">{link.label}</span>
               </a>
             ))}
@@ -75,9 +75,9 @@ export function ServicesHero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center"
+            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"
           >
-            <ArrowDown className="w-5 h-5 text-slate-400" />
+            <ArrowDown className="w-5 h-5 text-white/50" />
           </motion.div>
         </motion.div>
       </div>

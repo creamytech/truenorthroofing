@@ -31,7 +31,7 @@ const steps = [
 
 export function WhatToExpect() {
   return (
-    <section className="section-padding bg-slate-800/50">
+    <section className="section-padding bg-slate-50 dark:bg-slate-800/50">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -47,15 +47,15 @@ export function WhatToExpect() {
           {steps.map((step) => (
             <StaggerItem key={step.title}>
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                <Card className="h-full text-center bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
+                <Card className="h-full text-center bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
                   <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-500/20">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/20">
                       <step.icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="font-semibold text-white mb-2">
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       {step.description}
                     </p>
                   </CardContent>

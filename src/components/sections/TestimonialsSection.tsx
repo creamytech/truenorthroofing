@@ -47,10 +47,10 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="section-padding bg-slate-900 relative overflow-hidden">
+    <section className="section-padding bg-white dark:bg-slate-900 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -84,18 +84,18 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="mt-12 flex flex-wrap justify-center gap-8"
         >
-          <div className="flex items-center gap-2 text-slate-400">
+          <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                <Star key={i} className="w-5 h-5 fill-amber-400 text-blue-400" />
               ))}
             </div>
             <span>5.0 Average Rating</span>
           </div>
-          <div className="text-slate-400">
+          <div className="text-slate-500 dark:text-slate-400">
             <span className="text-white font-semibold">47+</span> Verified Reviews
           </div>
-          <div className="text-slate-400">
+          <div className="text-slate-500 dark:text-slate-400">
             <span className="text-white font-semibold">100%</span> Would Recommend
           </div>
         </motion.div>

@@ -14,7 +14,7 @@ export function CommercialCTA() {
             <h2 className="text-white mb-4">
               Protect Your Business Investment
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
+            <p className="text-xl text-white/70 mb-8">
               Get a free commercial roof assessment and customized maintenance plan for your property.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

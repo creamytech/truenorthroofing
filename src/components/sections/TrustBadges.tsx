@@ -38,7 +38,7 @@ const trustItems = [
 
 export function TrustBadges() {
   return (
-    <section className="py-8 bg-slate-950 border-y border-slate-800 overflow-hidden">
+    <section className="py-8 bg-slate-50 dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

@@ -11,7 +11,7 @@ export function GalleryHero() {
           <Reveal>
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="accent-divider" />
-              <span className="text-sm font-semibold tracking-wider uppercase text-amber-400">
+              <span className="text-sm font-semibold tracking-wider uppercase text-blue-400">
                 Our Work
               </span>
               <div className="accent-divider" />
@@ -32,7 +32,7 @@ export function GalleryHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-slate-300 leading-relaxed"
+            className="text-xl text-white/70 leading-relaxed"
           >
             See the quality and craftsmanship we bring to every project. 
             From residential homes to commercial properties, our work speaks for itself.

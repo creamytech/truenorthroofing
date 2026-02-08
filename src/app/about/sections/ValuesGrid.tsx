@@ -41,7 +41,7 @@ const values = [
 
 export function ValuesGrid() {
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -57,15 +57,15 @@ export function ValuesGrid() {
           {values.map((value) => (
             <StaggerItem key={value.title} className="h-full">
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="h-full">
-                <Card className="h-full bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
+                <Card className="h-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">
-                      <value.icon className="w-6 h-6 text-amber-400" />
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center mb-4">
+                      <value.icon className="w-6 h-6 text-blue-400" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-slate-400 leading-relaxed">
+                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
                       {value.description}
                     </p>
                   </CardContent>

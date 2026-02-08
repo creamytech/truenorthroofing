@@ -31,21 +31,21 @@ export function AboutTeaser() {
         <div className="max-w-6xl mx-auto">
           {/* Pull Quote */}
           <Reveal>
-            <Card className="relative overflow-hidden mb-16 border-0 bg-slate-800 shadow-premium">
+            <Card className="relative overflow-hidden mb-16 border-0 bg-white dark:bg-slate-800 shadow-premium">
               <div className="absolute inset-0 gradient-hero opacity-10" />
               <CardContent className="relative p-8 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-2xl gradient-accent flex items-center justify-center shadow-lg">
-                      <span className="text-3xl font-bold text-white">"</span>
+                      <span className="text-3xl font-bold text-slate-900 dark:text-white">"</span>
                     </div>
                   </div>
                   <div>
-                    <blockquote className="text-2xl md:text-3xl font-semibold text-white leading-relaxed mb-4">
+                    <blockquote className="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white leading-relaxed mb-4">
                       Most roofing companies are sales organizations that happen to install roofs.{" "}
-                      <span className="text-amber-400">We're the opposite.</span>
+                      <span className="text-blue-400">We're the opposite.</span>
                     </blockquote>
-                    <p className="text-lg text-slate-300">
+                    <p className="text-lg text-slate-500 dark:text-white/70">
                       We're roofing professionals who understand both the craft and the process—because 
                       your roof is more than a sale to us.
                     </p>
@@ -63,15 +63,15 @@ export function AboutTeaser() {
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="h-full bg-slate-800 border-slate-700 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300">
+                  <Card className="h-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">
-                        <card.icon className="w-6 h-6 text-amber-400" />
+                      <div className="w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center mb-4">
+                        <card.icon className="w-6 h-6 text-blue-400" />
                       </div>
-                      <h3 className="text-lg font-semibold text-white mb-2">
+                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
                         {card.title}
                       </h3>
-                      <p className="text-slate-400 leading-relaxed">
+                      <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
                         {card.description}
                       </p>
                     </CardContent>

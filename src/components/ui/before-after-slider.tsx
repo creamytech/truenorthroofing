@@ -103,7 +103,7 @@ export function BeforeAfterSlider({
           fill
           className="object-cover"
         />
-        <div className="absolute bottom-4 left-4 px-3 py-1.5 bg-slate-700 text-white text-sm font-semibold rounded-full">
+        <div className="absolute bottom-4 left-4 px-3 py-1.5 bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-full">
           {beforeLabel}
         </div>
       </div>

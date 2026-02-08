@@ -88,12 +88,12 @@ export function ServicesSnapshot() {
 
         <Reveal>
           <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-5xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 h-14 p-1 bg-slate-800 rounded-xl mb-8">
+            <TabsList className="grid w-full grid-cols-3 h-14 p-1 bg-white dark:bg-slate-800 rounded-xl mb-8">
               {Object.entries(services).map(([key, service]) => (
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="data-[state=active]:bg-amber-500 data-[state=active]:text-white data-[state=inactive]:text-slate-300 rounded-lg text-sm font-medium transition-all"
+                  className="data-[state=active]:bg-blue-500 data-[state=active]:text-white data-[state=inactive]:text-slate-500 dark:data-[state=inactive]:text-slate-300 rounded-lg text-sm font-medium transition-all"
                 >
                   <service.icon className="w-4 h-4 mr-2" />
                   <span className="hidden sm:inline">{service.title.split(" ")[0]}</span>
@@ -111,18 +111,18 @@ export function ServicesSnapshot() {
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Card className="border-slate-700 bg-slate-800 shadow-lg">
+                    <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg">
                       <CardContent className="p-0">
-                        <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-700">
+                        <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 dark:divide-slate-700">
                           {/* Services List */}
                           <div className="p-6 lg:p-8">
                             <div className="flex items-center gap-3 mb-4">
                               <div className="w-10 h-10 rounded-lg gradient-accent flex items-center justify-center">
-                                <service.icon className="w-5 h-5 text-white" />
+                                <service.icon className="w-5 h-5 text-slate-900 dark:text-white" />
                               </div>
                               <div>
-                                <h3 className="font-semibold text-white">{service.title}</h3>
-                                <p className="text-sm text-slate-400">{service.description}</p>
+                                <h3 className="font-semibold text-slate-900 dark:text-white">{service.title}</h3>
+                                <p className="text-sm text-slate-500 dark:text-slate-400">{service.description}</p>
                               </div>
                             </div>
                             <ul className="space-y-3 mt-6">
@@ -134,18 +134,18 @@ export function ServicesSnapshot() {
                                   transition={{ delay: index * 0.05 }}
                                   className="flex items-center gap-3"
                                 >
-                                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                                    <Check className="w-3.5 h-3.5 text-amber-400" />
+                                  <div className="w-6 h-6 rounded-full bg-blue-500/15 flex items-center justify-center flex-shrink-0">
+                                    <Check className="w-3.5 h-3.5 text-blue-400" />
                                   </div>
-                                  <span className="text-slate-200">{item}</span>
+                                  <span className="text-slate-600 dark:text-slate-200">{item}</span>
                                 </motion.li>
                               ))}
                             </ul>
                           </div>
 
                           {/* Process */}
-                          <div className="p-6 lg:p-8 bg-slate-900/50">
-                            <h4 className="font-semibold text-white mb-4">What to Expect</h4>
+                          <div className="p-6 lg:p-8 bg-white/50 dark:bg-slate-900/50">
+                            <h4 className="font-semibold text-slate-900 dark:text-white mb-4">What to Expect</h4>
                             <ol className="space-y-4">
                               {service.process.map((step, index) => (
                                 <motion.li
@@ -155,10 +155,10 @@ export function ServicesSnapshot() {
                                   transition={{ delay: 0.1 + index * 0.05 }}
                                   className="flex items-start gap-3"
                                 >
-                                  <span className="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <span className="w-6 h-6 rounded-full bg-blue-500 text-white text-xs font-semibold flex items-center justify-center flex-shrink-0 mt-0.5">
                                     {index + 1}
                                   </span>
-                                  <span className="text-slate-300">{step}</span>
+                                  <span className="text-slate-600 dark:text-slate-300">{step}</span>
                                 </motion.li>
                               ))}
                             </ol>

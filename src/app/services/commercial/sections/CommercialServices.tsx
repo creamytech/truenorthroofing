@@ -47,7 +47,7 @@ const services = [
 
 export function CommercialServices() {
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -63,20 +63,20 @@ export function CommercialServices() {
           {services.map((service) => (
             <StaggerItem key={service.title}>
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                <Card className="h-full bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
+                <Card className="h-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:shadow-lg hover:shadow-blue-500/10 transition-all">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-amber-500/20">
-                      <service.icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-blue-500/20">
+                      <service.icon className="w-6 h-6 text-slate-900 dark:text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-slate-400 text-sm mb-4">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">
                       {service.description}
                     </p>
                     <ul className="space-y-2">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
+                        <li key={feature} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                           <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
                           {feature}
                         </li>

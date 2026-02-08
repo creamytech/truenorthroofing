@@ -14,7 +14,7 @@ export function ResidentialCTA() {
             <h2 className="text-white mb-4">
               Ready to Protect Your Home?
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
+            <p className="text-xl text-white/70 mb-8">
               Schedule your free inspection today and get an honest assessment of your roof&apos;s condition.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

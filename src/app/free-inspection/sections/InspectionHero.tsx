@@ -14,7 +14,7 @@ export function InspectionHero() {
   return (
     <section className="relative pt-32 pb-16 overflow-hidden gradient-hero">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
       </div>
 
@@ -23,7 +23,7 @@ export function InspectionHero() {
           <Reveal>
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="accent-divider" />
-              <span className="text-sm font-semibold tracking-wider uppercase text-amber-400">
+              <span className="text-sm font-semibold tracking-wider uppercase text-blue-400">
                 Schedule Today
               </span>
               <div className="accent-divider" />
@@ -37,7 +37,7 @@ export function InspectionHero() {
             className="text-white mb-6 uppercase tracking-wide"
           >
             Get Your{" "}
-            <span className="text-amber-400">Free</span>{" "}
+            <span className="text-blue-400">Free</span>{" "}
             Roof Inspection
           </motion.h1>
 
@@ -62,7 +62,7 @@ export function InspectionHero() {
                 key={item.text}
                 className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20"
               >
-                <item.icon className="w-5 h-5 text-amber-400" />
+                <item.icon className="w-5 h-5 text-blue-400" />
                 <span className="text-white font-medium">{item.text}</span>
               </div>
             ))}

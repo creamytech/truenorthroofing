@@ -93,39 +93,39 @@ export function ContactForm() {
   };
 
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-4">
             <Reveal variants={slideInLeft}>
-              <h2 className="text-2xl font-bold text-white mb-6">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
                 Contact Information
               </h2>
               
               {contactInfo.map((item) => (
-                <Card key={item.label} className="bg-slate-800 border-slate-700 hover:shadow-lg hover:shadow-amber-500/10 transition-shadow">
+                <Card key={item.label} className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:shadow-lg hover:shadow-blue-500/10 transition-shadow">
                   <CardContent className="p-4">
                     {item.href ? (
                       <a href={item.href} className="flex items-center gap-4 group">
-                        <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center group-hover:bg-amber-500 transition-colors">
-                          <item.icon className="w-5 h-5 text-amber-400 group-hover:text-white transition-colors" />
+                        <div className="w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                          <item.icon className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
                         </div>
                         <div>
-                          <p className="text-sm text-slate-400">{item.label}</p>
-                          <p className="font-medium text-white group-hover:text-amber-400 transition-colors">
+                          <p className="text-sm text-slate-500 dark:text-slate-400">{item.label}</p>
+                          <p className="font-medium text-slate-900 dark:text-white group-hover:text-blue-400 transition-colors">
                             {item.value}
                           </p>
                         </div>
                       </a>
                     ) : (
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                          <item.icon className="w-5 h-5 text-amber-400" />
+                        <div className="w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center">
+                          <item.icon className="w-5 h-5 text-blue-400" />
                         </div>
                         <div>
-                          <p className="text-sm text-slate-400">{item.label}</p>
-                          <p className="font-medium text-white">{item.value}</p>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">{item.label}</p>
+                          <p className="font-medium text-slate-900 dark:text-white">{item.value}</p>
                         </div>
                       </div>
                     )}
@@ -138,9 +138,9 @@ export function ContactForm() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Reveal variants={slideInRight}>
-              <Card className="shadow-lg bg-slate-800 border-slate-700">
+              <Card className="shadow-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
                 <CardContent className="p-6 lg:p-8">
-                  <h3 className="text-xl font-semibold text-white mb-6">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
                     Send Us a Message
                   </h3>
 
@@ -152,9 +152,9 @@ export function ContactForm() {
                           name="name"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-slate-300">Full Name</FormLabel>
+                              <FormLabel className="text-slate-600 dark:text-slate-300">Full Name</FormLabel>
                               <FormControl>
-                                <Input placeholder="John Smith" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                                <Input placeholder="John Smith" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -165,9 +165,9 @@ export function ContactForm() {
                           name="phone"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-slate-300">Phone</FormLabel>
+                              <FormLabel className="text-slate-600 dark:text-slate-300">Phone</FormLabel>
                               <FormControl>
-                                <Input type="tel" placeholder="(817) 204-4432" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                                <Input type="tel" placeholder="(817) 204-4432" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -180,9 +180,9 @@ export function ContactForm() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-slate-300">Email</FormLabel>
+                            <FormLabel className="text-slate-600 dark:text-slate-300">Email</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="john@example.com" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                              <Input type="email" placeholder="john@example.com" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -194,9 +194,9 @@ export function ContactForm() {
                         name="subject"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-slate-300">Subject</FormLabel>
+                            <FormLabel className="text-slate-600 dark:text-slate-300">Subject</FormLabel>
                             <FormControl>
-                              <Input placeholder="How can we help?" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                              <Input placeholder="How can we help?" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -208,11 +208,11 @@ export function ContactForm() {
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-slate-300">Message</FormLabel>
+                            <FormLabel className="text-slate-600 dark:text-slate-300">Message</FormLabel>
                             <FormControl>
                               <Textarea
                                 placeholder="Tell us about your roofing needs..."
-                                className="resize-none bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                className="resize-none bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400"
                                 rows={5}
                                 {...field}
                               />

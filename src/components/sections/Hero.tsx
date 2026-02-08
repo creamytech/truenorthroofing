@@ -80,17 +80,17 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-wrap items-center justify-center gap-3 lg:gap-4 xl:gap-5"
           >
-            <GoogleReviewsBadge rating={5.0} reviewCount={19} />
+            <GoogleReviewsBadge rating={5.0} reviewCount={19} className="!bg-[rgba(15,23,42,0.85)] !border-white/20 [&_span]:!text-white [&_.text-slate-600]:!text-slate-300 [&_.text-slate-900]:!text-white" />
             <div className="flex items-center gap-2 px-3 py-2 sm:py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
-              <Shield className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400" />
+              <Shield className="w-4 h-4 xl:w-5 xl:h-5 text-blue-400" />
               <span className="text-sm sm:text-xs lg:text-sm xl:text-base text-white/90 font-medium">Fully Insured</span>
             </div>
             <div className="flex items-center gap-2 px-3 py-2 sm:py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
-              <Clock className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400" />
+              <Clock className="w-4 h-4 xl:w-5 xl:h-5 text-blue-400" />
               <span className="text-sm sm:text-xs lg:text-sm xl:text-base text-white/90 font-medium">Same-Day Service</span>
             </div>
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 xl:px-4 xl:py-2 rounded-full glass-dark">
-              <Award className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400" />
+              <Award className="w-4 h-4 xl:w-5 xl:h-5 text-blue-400" />
               <span className="text-xs lg:text-sm xl:text-base text-white/90 font-medium">Lifetime Warranty</span>
             </div>
           </motion.div>

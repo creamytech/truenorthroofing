@@ -79,7 +79,7 @@ export function GalleryGrid() {
   };
 
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Gallery Grid */}
         <motion.div 
@@ -98,7 +98,7 @@ export function GalleryGrid() {
                 onClick={() => openModal(project)}
                 className="cursor-pointer group"
               >
-                <Card className="overflow-hidden border-slate-700 bg-slate-800 shadow-md hover:shadow-xl hover:shadow-amber-500/10 transition-all">
+                <Card className="overflow-hidden border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-md hover:shadow-xl hover:shadow-blue-500/10 transition-all">
                   <div className="relative aspect-[4/3]">
                     <Image
                       src={project.image}
@@ -116,7 +116,7 @@ export function GalleryGrid() {
 
         {/* Project Modal */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] xl:max-w-[80vw] p-0 bg-slate-900 border-slate-700 overflow-hidden">
+          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] xl:max-w-[80vw] p-0 bg-slate-900 border-slate-200 dark:border-slate-700 overflow-hidden">
             <DialogHeader className="sr-only">
               <DialogTitle>Project Image</DialogTitle>
             </DialogHeader>
@@ -135,13 +135,13 @@ export function GalleryGrid() {
                   {/* Navigation */}
                   <button
                     onClick={() => navigate("prev")}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors text-white"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors text-white"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
                     onClick={() => navigate("next")}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors text-white"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors text-white"
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>

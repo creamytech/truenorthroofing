@@ -64,7 +64,7 @@ export function CTASection() {
     <section className="section-padding gradient-hero relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
       </div>
 
@@ -75,7 +75,7 @@ export function CTASection() {
             <div className="text-white">
               <div className="flex items-center gap-3 mb-4">
                 <div className="accent-divider" />
-                <span className="text-sm font-semibold tracking-wider uppercase text-amber-400">
+                <span className="text-sm font-semibold tracking-wider uppercase text-blue-400">
                   Get Started
                 </span>
               </div>
@@ -90,7 +90,7 @@ export function CTASection() {
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {benefits.map((benefit) => (
                   <div key={benefit.text} className="flex items-center gap-3">
-                    <benefit.icon className="w-5 h-5 text-amber-400" />
+                    <benefit.icon className="w-5 h-5 text-blue-400" />
                     <span className="text-white/80">{benefit.text}</span>
                   </div>
                 ))}
@@ -101,7 +101,7 @@ export function CTASection() {
                   href="tel:+18172044432"
                   className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-amber-400" />
+                  <Phone className="w-5 h-5 text-blue-400" />
                   <div>
                     <p className="text-xs text-white/60">Call Us</p>
                     <p className="font-semibold text-white">(817) 204-4432</p>
@@ -111,7 +111,7 @@ export function CTASection() {
                   href="mailto:Office@truenorth-tx.co"
                   className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
                 >
-                  <Mail className="w-5 h-5 text-amber-400" />
+                  <Mail className="w-5 h-5 text-blue-400" />
                   <div>
                     <p className="text-xs text-white/60">Email Us</p>
                     <p className="font-semibold text-white">Office@truenorth-tx.co</p>
@@ -123,9 +123,9 @@ export function CTASection() {
 
           {/* Right - Form */}
           <Reveal variants={slideInRight}>
-            <Card className="shadow-2xl border-0 bg-slate-800">
+            <Card className="shadow-2xl border-0 bg-white dark:bg-slate-800">
               <CardContent className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-white mb-6">
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
                   Schedule Your Free Inspection
                 </h3>
 
@@ -189,8 +189,8 @@ export function CTASection() {
                                   onClick={() => field.onChange(option)}
                                   className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-colors ${
                                     field.value === option
-                                      ? "bg-amber-500 text-white"
-                                      : "bg-slate-700 text-slate-300 hover:bg-slate-600"
+                                      ? "bg-blue-500 text-white"
+                                      : "bg-slate-200 dark:bg-slate-700 text-white/70 hover:bg-slate-300 dark:hover:bg-slate-600"
                                   }`}
                                 >
                                   {option.charAt(0).toUpperCase() + option.slice(1)}
@@ -230,7 +230,7 @@ export function CTASection() {
                       {form.formState.isSubmitting ? "Submitting..." : "Schedule Free Inspection"}
                     </Button>
 
-                    <p className="text-xs text-slate-400 text-center">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
                       By submitting, you agree to receive calls or texts about your inquiry. 
                       We respect your privacy.
                     </p>

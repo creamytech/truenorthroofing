@@ -79,13 +79,13 @@ export function InspectionForm() {
   };
 
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* What We Inspect */}
           <Reveal>
             <div>
-              <h2 className="text-2xl font-bold text-white mb-6">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
                 What We Inspect
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -94,16 +94,16 @@ export function InspectionForm() {
                     <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5 text-green-400" />
                     </div>
-                    <span className="text-slate-300">{item}</span>
+                    <span className="text-slate-600 dark:text-slate-300">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 p-6 rounded-xl bg-amber-950/50 border border-amber-900/50">
-                <h3 className="font-semibold text-white mb-2">
+              <div className="mt-8 p-6 rounded-xl bg-blue-950/50 border border-blue-900/50">
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
                   Storm Damage?
                 </h3>
-                <p className="text-slate-300 text-sm">
+                <p className="text-slate-600 dark:text-slate-300 text-sm">
                   If you suspect storm damage, we&apos;ll document everything your insurance 
                   company needs to process your claim accurately. Our detailed reports 
                   have helped hundreds of Texas homeowners get approved.
@@ -114,9 +114,9 @@ export function InspectionForm() {
 
           {/* Form */}
           <Reveal variants={slideInRight}>
-            <Card className="shadow-xl bg-slate-800 border-slate-700">
+            <Card className="shadow-xl bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
               <CardContent className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-white mb-6">
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
                   Schedule Your Inspection
                 </h3>
 
@@ -127,9 +127,9 @@ export function InspectionForm() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-slate-300">Full Name</FormLabel>
+                          <FormLabel className="text-slate-600 dark:text-slate-300">Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Smith" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                            <Input placeholder="John Smith" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -142,9 +142,9 @@ export function InspectionForm() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-slate-300">Email</FormLabel>
+                            <FormLabel className="text-slate-600 dark:text-slate-300">Email</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="john@example.com" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                              <Input type="email" placeholder="john@example.com" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -155,9 +155,9 @@ export function InspectionForm() {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-slate-300">Phone</FormLabel>
+                            <FormLabel className="text-slate-600 dark:text-slate-300">Phone</FormLabel>
                             <FormControl>
-                              <Input type="tel" placeholder="(817) 204-4432" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                              <Input type="tel" placeholder="(817) 204-4432" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -170,9 +170,9 @@ export function InspectionForm() {
                       name="address"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-slate-300">Property Address</FormLabel>
+                          <FormLabel className="text-slate-600 dark:text-slate-300">Property Address</FormLabel>
                           <FormControl>
-                            <Input placeholder="123 Main St, Dallas, TX 75001" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" {...field} />
+                            <Input placeholder="123 Main St, Dallas, TX 75001" className="bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -184,7 +184,7 @@ export function InspectionForm() {
                       name="preferredContact"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-slate-300">Preferred Contact Method</FormLabel>
+                          <FormLabel className="text-slate-600 dark:text-slate-300">Preferred Contact Method</FormLabel>
                           <FormControl>
                             <div className="flex gap-2">
                               {["phone", "email", "either"].map((option) => (
@@ -194,8 +194,8 @@ export function InspectionForm() {
                                   onClick={() => field.onChange(option)}
                                   className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors ${
                                     field.value === option
-                                      ? "bg-amber-500 text-white"
-                                      : "bg-slate-700 text-slate-300 hover:bg-slate-600"
+                                      ? "bg-blue-500 text-white"
+                                      : "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600"
                                   }`}
                                 >
                                   {option.charAt(0).toUpperCase() + option.slice(1)}
@@ -213,11 +213,11 @@ export function InspectionForm() {
                       name="notes"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-slate-300">Additional Notes (Optional)</FormLabel>
+                          <FormLabel className="text-slate-600 dark:text-slate-300">Additional Notes (Optional)</FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Any specific concerns or best times to reach you?"
-                              className="resize-none bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                              className="resize-none bg-white dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-400"
                               rows={3}
                               {...field}
                             />

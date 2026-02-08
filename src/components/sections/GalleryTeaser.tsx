@@ -54,7 +54,7 @@ export function GalleryTeaser() {
             />
           </Reveal>
           <Reveal>
-            <Button asChild variant="outline" className="self-start md:self-auto border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white">
+            <Button asChild variant="outline" className="self-start md:self-auto border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white">
               <Link href="/gallery">
                 View All Projects
               </Link>
@@ -91,7 +91,7 @@ export function GalleryTeaser() {
 
         {/* Lightbox Dialog */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] xl:max-w-[80vw] p-0 bg-slate-900 border-slate-800">
+          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] xl:max-w-[80vw] p-0 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800">
             <DialogHeader className="sr-only">
               <DialogTitle>Project Image</DialogTitle>
             </DialogHeader>
@@ -108,15 +108,15 @@ export function GalleryTeaser() {
               {/* Navigation */}
               <button
                 onClick={() => navigateLightbox("prev")}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors"
               >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-6 h-6 text-slate-900 dark:text-white" />
               </button>
               <button
                 onClick={() => navigateLightbox("next")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center shadow-lg transition-colors"
               >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-6 h-6 text-slate-900 dark:text-white" />
               </button>
 
               {/* Bottom CTA */}
