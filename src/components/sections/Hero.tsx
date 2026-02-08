@@ -45,11 +45,11 @@ export function Hero() {
             style={{ filter: "drop-shadow(0 0 20px rgba(34,90,147,0.2))" }}
           >
             <Image
-              src="/logosvg.svg"
+              src="/HEROV2.png"
               alt="True North Roofing & Construction"
               width={1908}
               height={614}
-              className="w-80 sm:w-96 lg:w-[32rem] xl:w-[40rem] h-auto brightness-0 invert"
+              className="w-80 sm:w-96 lg:w-[32rem] xl:w-[40rem] h-auto"
               priority
               unoptimized
             />
