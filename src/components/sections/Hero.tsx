@@ -30,20 +30,26 @@ export function Hero() {
       {/* Centered Content */}
       <div className="relative container mx-auto px-4 lg:px-8 py-24 sm:py-20 lg:py-32 xl:py-40">
         <div className="max-w-4xl xl:max-w-5xl mx-auto text-center space-y-8 lg:space-y-8 xl:space-y-10">
-          
-          {/* Logo */}
+
+          {/* Animated Hero Logo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.85, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            whileHover={{ 
+              scale: 1.05,
+              filter: "drop-shadow(0 0 40px rgba(34,90,147,0.6)) drop-shadow(0 0 80px rgba(34,90,147,0.3))",
+              transition: { duration: 0.4, ease: "easeOut" }
+            }}
+            className="flex justify-center cursor-pointer"
+            style={{ filter: "drop-shadow(0 0 20px rgba(34,90,147,0.2))" }}
           >
             <Image
-              src="/herologo.png"
+              src="/logosvg.svg"
               alt="True North Roofing & Construction"
-              width={1920}
-              height={548}
-              className="w-80 sm:w-96 lg:w-[32rem] xl:w-[40rem] h-auto drop-shadow-2xl"
+              width={1908}
+              height={614}
+              className="w-80 sm:w-96 lg:w-[32rem] xl:w-[40rem] h-auto brightness-0 invert"
               priority
               unoptimized
             />

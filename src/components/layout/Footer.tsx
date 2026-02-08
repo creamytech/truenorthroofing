@@ -68,11 +68,11 @@ export function Footer() {
               <div className="lg:col-span-1 text-center md:text-left">
                 <Link href="/" className="inline-block mb-6">
                   <Image
-                    src="/logoheader.png"
+                    src="/logolightmode.png"
                     alt="True North Roofing & Construction"
                     width={240}
                     height={68}
-                    className="h-16 w-auto brightness-0 dark:invert opacity-90 mx-auto md:mx-0"
+                    className="h-16 w-auto dark:brightness-0 dark:invert opacity-90 mx-auto md:mx-0"
                   />
                 </Link>
                 <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">

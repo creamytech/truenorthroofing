@@ -126,11 +126,11 @@ export function Navbar() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <Image
-                src="/logoheader.png"
+                src="/logolightmode.png"
                 alt="True North Roofing & Construction"
                 width={180}
                 height={50}
-                className="h-10 w-auto brightness-0 dark:invert"
+                className="h-10 w-auto dark:brightness-0 dark:invert"
                 priority
               />
             </Link>
@@ -146,11 +146,11 @@ export function Navbar() {
                   {/* Header */}
                   <div className="px-6 pt-6 pb-4 text-center border-b border-slate-100 dark:border-slate-800">
                     <Image
-                      src="/logoheader.png"
+                      src="/logolightmode.png"
                       alt="True North Roofing & Construction"
                       width={200}
                       height={56}
-                      className="h-11 w-auto brightness-0 dark:brightness-0 dark:invert mx-auto"
+                      className="h-11 w-auto dark:brightness-0 dark:invert mx-auto"
                     />
                     {weather && (
                       <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs text-slate-500 dark:text-slate-400">
@@ -280,11 +280,11 @@ export function Navbar() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <Image
-                src="/logoheader.png"
+                src="/logolightmode.png"
                 alt="True North Roofing & Construction"
                 width={240}
                 height={70}
-                className="h-14 w-auto brightness-0 dark:invert"
+                className="h-14 w-auto dark:brightness-0 dark:invert"
                 priority
               />
             </Link>
