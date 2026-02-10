@@ -173,7 +173,7 @@ export function Footer() {
           <div className="border-t border-slate-200 dark:border-slate-800">
             <div className="container mx-auto px-4 lg:px-8 py-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-                <p>© {currentYear} True North Roofing & Construction, LLC. All rights reserved.</p>
+                <p className="text-center md:text-left">© {currentYear} True North Roofing & Construction, LLC. All rights reserved.</p>
                 <div className="flex gap-6">
                   <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                     Privacy Policy
