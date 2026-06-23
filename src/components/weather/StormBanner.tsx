@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useWeather } from "@/lib/weather-context";
@@ -11,6 +11,7 @@ export function StormBanner() {
   const { weather } = useWeather();
   const [isDismissed, setIsDismissed] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Check if user has dismissed this session
@@ -30,6 +31,28 @@ export function StormBanner() {
   };
 
   const showBanner = isVisible && !isDismissed;
+
+  // Expose the banner's live height as a CSS variable so the fixed (mobile)
+  // navbar can sit directly below it instead of overlapping it.
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!showBanner) {
+      root.style.setProperty('--banner-h', '0px');
+      return;
+    }
+    const el = bannerRef.current;
+    if (!el) return;
+    const update = () =>
+      root.style.setProperty('--banner-h', `${el.offsetHeight}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      root.style.setProperty('--banner-h', '0px');
+    };
+  }, [showBanner]);
+
   const severity = weather?.alerts?.[0]?.severity || 'moderate';
   const isSevere = severity === 'severe' || severity === 'extreme';
 
@@ -37,6 +60,7 @@ export function StormBanner() {
     <AnimatePresence>
       {showBanner && (
         <motion.div
+          ref={bannerRef}
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}

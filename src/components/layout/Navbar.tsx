@@ -104,7 +104,7 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed lg:sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed lg:sticky top-[var(--banner-h,0px)] lg:top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
             ? "py-2 shadow-lg bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50" 
             : "py-3 lg:py-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm lg:bg-white lg:dark:bg-slate-900"
