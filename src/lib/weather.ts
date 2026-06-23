@@ -48,8 +48,8 @@ export async function fetchTexasWeather(): Promise<WeatherData | null> {
   try {
     // Use Open-Meteo API (free, no API key required)
     const response = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${DFW_LOCATION.lat}&longitude=${DFW_LOCATION.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America/Chicago`,
-      { 
+      `https://api.open-meteo.com/v1/forecast?latitude=${DFW_LOCATION.lat}&longitude=${DFW_LOCATION.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,precipitation&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America/Chicago`,
+      {
         next: { revalidate: 600 }, // Cache for 10 minutes
         cache: 'no-store' // For client-side fetches, don't cache stale data
       }
@@ -65,13 +65,19 @@ export async function fetchTexasWeather(): Promise<WeatherData | null> {
 
     const weatherCode = current.weather_code;
     const { condition, description } = mapWMOCode(weatherCode);
-    
-    const isStormy = ['thunderstorm', 'storm'].includes(condition);
-    const isRainy = ['rain', 'drizzle', 'thunderstorm', 'storm'].includes(condition);
+
+    // Amount of precipitation falling right now (mm). The weather_code alone
+    // often reports a wet condition when nothing is actually falling, so we
+    // require measurable precipitation before driving the rain/storm UI.
+    const precipitation = Number(current.precipitation) || 0;
+    const isPrecipitating = precipitation > 0;
+
+    const isStormy = ['thunderstorm', 'storm'].includes(condition) && isPrecipitating;
+    const isRainy = ['rain', 'drizzle', 'thunderstorm', 'storm'].includes(condition) && isPrecipitating;
 
     // Check for severe weather alerts (simplified - in production you'd use NWS API)
     const alerts: WeatherAlert[] = [];
-    
+
     // Add alert if thunderstorm conditions
     if (isStormy) {
       alerts.push({
@@ -84,8 +90,8 @@ export async function fetchTexasWeather(): Promise<WeatherData | null> {
       });
     }
 
-    // Add alert for high winds (over 25 mph)
-    if (current.wind_speed_10m > 25) {
+    // Add alert for high winds (NWS wind advisory territory ~35+ mph)
+    if (current.wind_speed_10m > 35) {
       alerts.push({
         event: 'High Wind Advisory',
         headline: 'High Winds in DFW Area',
