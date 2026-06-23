@@ -59,40 +59,6 @@ export function RainEffect() {
       
       {/* Lightning flash for thunderstorms */}
       {weather?.condition === 'thunderstorm' && <LightningFlash />}
-      
-      <style jsx>{`
-        .rain-container {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          z-index: 100;
-          overflow: hidden;
-        }
-        
-        .rain-drop {
-          position: absolute;
-          top: -50px;
-          background: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0),
-            rgba(174, 194, 224, 0.6)
-          );
-          border-radius: 0 0 5px 5px;
-          animation: rain-fall linear infinite;
-        }
-        
-        @keyframes rain-fall {
-          0% {
-            transform: translateY(-50px);
-          }
-          100% {
-            transform: translateY(100vh);
-          }
-        }
-      `}</style>
     </div>
   );
 }
@@ -121,7 +87,7 @@ function LightningFlash() {
 
   return (
     <div 
-      className="fixed inset-0 pointer-events-none z-90 bg-white/20"
+      className="fixed inset-0 pointer-events-none z-[90] bg-white/20"
       style={{ animation: 'lightning 0.1s ease-out' }}
     />
   );
