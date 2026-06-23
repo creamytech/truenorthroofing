@@ -10,7 +10,7 @@ import { GoogleReviewsBadge } from "@/components/ui/google-reviews-badge";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[80vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(85vh_-_var(--banner-h))] sm:min-h-[calc(80vh_-_var(--banner-h))] lg:min-h-[calc(100vh_-_var(--banner-h))] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video

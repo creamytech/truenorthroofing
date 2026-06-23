@@ -9,6 +9,9 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
+  /* Live height of the storm alert banner (0 when hidden). Updated by StormBanner. */
+  --banner-h: 0px;
+
   /* Core Brand Colors - Extracted from True North Logo */
   --tn-primary: 217 91% 40%; /* Bold Blue (logo primary) */
   --tn-primary-light: 217 85% 53%; /* Bright Blue */
