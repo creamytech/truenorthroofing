@@ -486,6 +486,8 @@ select:focus {
     right: 0;
     z-index: 50;
     padding: 1rem;
+    /* Leave room on the right for the LeadConnector chat bubble (58px at right: 20px) */
+    padding-right: 5.5rem;
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     border-top: 1px solid var(--glass-border);
