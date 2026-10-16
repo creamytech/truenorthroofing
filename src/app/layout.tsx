@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Barlow_Condensed } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar, Footer } from "@/components/layout";
@@ -160,6 +161,15 @@ export default function RootLayout({
           {/* Auto-scroll to top on page navigation */}
           <ScrollToTopOnNavigate />
           
+          {/* LeadConnector Chat Widget */}
+          <Script
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="6ad0e2afcc8a6767ee81e6e7"
+            data-source="WEB_USER"
+            strategy="afterInteractive"
+          />
+
           {/* Mobile Sticky CTA */}
           <div className="lg:hidden sticky-cta">
             <div className="flex gap-3">
